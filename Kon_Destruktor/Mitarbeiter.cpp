@@ -34,6 +34,6 @@ int main() {
 
 	ptr->gehalt = 5;
 	cout << " Gehalt: " << (ptr->gehalt) << endl;
-
+	
 	return 0;
 }

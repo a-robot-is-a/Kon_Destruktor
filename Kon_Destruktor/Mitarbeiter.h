@@ -12,16 +12,12 @@ public:
 	string name;
 	int gehalt;
 
-	Mitarbeiter()
+	// Besserer Konstruktor - Wenn nichts eingegeben wird, wird unbekannt und 0
+	// eingetragen
+	Mitarbeiter(string name = "unbekannt", int gehalt = 0)
 	{
-		name = "unbekannt";
-		gehalt = 0;
-	}
-
-	Mitarbeiter(string n, int s)
-	{
-		name = n;
-		gehalt = s;
+		this->name = name;
+		this->gehalt = gehalt;
 	}
 	
 	void befoerdern(int betrag)
