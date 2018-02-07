@@ -44,6 +44,8 @@ int main() {
 	{
 		cout << "\n Name: " << mitA[i].name << " Gehalt: " << mitA[i].gehalt << endl;
 	}
+
+	// Hallo Roger, ein gruss von Linux
 	
 	return 0;
 }
