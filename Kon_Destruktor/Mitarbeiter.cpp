@@ -34,6 +34,16 @@ int main() {
 
 	ptr->gehalt = 5;
 	cout << " Gehalt: " << (ptr->gehalt) << endl;
+
+	// Ein wenig array - um die ganze Horde zu verwalten :)
+
+	const int cap = 5;
+	Mitarbeiter mitA[cap];
+
+	for (size_t i = 0; i < cap; i++)
+	{
+		cout << "\n Name: " << mitA[i].name << " Gehalt: " << mitA[i].gehalt << endl;
+	}
 	
 	return 0;
 }
