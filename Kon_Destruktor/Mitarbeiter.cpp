@@ -8,6 +8,7 @@ Hier werden die Klassen aufgerufen.
 using namespace std;
 
 #include "Mitarbeiter.h"
+#include "Mitarbeiter2.h"
 
 int main() {
 
@@ -45,7 +46,15 @@ int main() {
 		cout << "\n Name: " << mitA[i].name << " Gehalt: " << mitA[i].gehalt << endl;
 	}
 
-	// Hallo Roger, ein gruss von Linux
+	// Hallo Roger, ein Gruss von Linux
+
+	// Datenkapselung (Mitarbeiter2.h)
+
+	cout << "\n Datenkapselung(Mitarbeiter2.h)" << endl;
+
+	Mitarbeiter2 peter;
+	peter.setData("Hartmann", 3500);
+	peter.getData();
 	
 	return 0;
 }
