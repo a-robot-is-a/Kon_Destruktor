@@ -9,6 +9,7 @@ using namespace std;
 
 #include "Mitarbeiter.h"
 #include "Mitarbeiter2.h"
+#include "Stack.h"
 
 int main() {
 
@@ -46,7 +47,6 @@ int main() {
 		cout << "\n Name: " << mitA[i].name << " Gehalt: " << mitA[i].gehalt << endl;
 	}
 
-	// Hallo Roger, ein Gruss von Linux
 
 	// Datenkapselung (Mitarbeiter2.h)
 
@@ -55,6 +55,24 @@ int main() {
 	Mitarbeiter2 peter;
 	peter.setData("Hartmann", 3500);
 	peter.getData();
-	
+
+	// Stack
+	cout << "\n Hier beginnt der Stack.h" << endl;
+
+	int stack[3];
+	Stack sta;
+	sta.push(stack, 5, 3);
+
+	cout << "\n Current size of stack is " << sta.size() << endl;
+
+	sta.push(stack, 10, 3);
+	sta.push(stack, 24, 3);
+
+	cout << "\n Current size of stack is " << sta.size() << endl;
+
+	// Der Stack ist voll, jetzt wird die overflow Bedingung ausgeloest
+
+	sta.push(stack, 12, 3);
+
 	return 0;
 }
