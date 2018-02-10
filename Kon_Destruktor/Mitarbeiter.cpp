@@ -1,6 +1,6 @@
 /*
-Diese Quelle stellt die main.
-Hier werden die Klassen aufgerufen.
+	Diese Quelle stellt die main.
+	Hier werden die Klassen aufgerufen.
 */
 
 #include <iostream>
@@ -10,6 +10,9 @@ using namespace std;
 #include "Mitarbeiter.h"
 #include "Mitarbeiter2.h"
 #include "Stack.h"
+
+#include <cassert>	// eventuell wichtig für Stack_2.h
+#include "Stack_2.h"
 
 int main() {
 
