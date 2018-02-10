@@ -10,7 +10,7 @@ public:
 	{
 		if (top == n - 1)       //If the top position is the last of position of the stack, this means that the stack is full.
 		{
-			cout << "\n Stack is full.Overflow condition!";
+			cout << "\n Stack is full. Overflow condition!" << endl;
 		}
 		else
 		{
