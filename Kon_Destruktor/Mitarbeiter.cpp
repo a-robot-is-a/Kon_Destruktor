@@ -11,7 +11,7 @@ using namespace std;
 #include "Mitarbeiter2.h"
 #include "Stack.h"
 
-#include <cassert>	// eventuell wichtig für Stack_2.h
+#include <cassert>	// eventuell wichtig fuer Stack_2.h
 #include "Stack_2.h"
 
 int main() {
@@ -76,6 +76,9 @@ int main() {
 	// Der Stack ist voll, jetzt wird die overflow Bedingung ausgeloest
 
 	sta.push(stack, 12, 3);
+
+	// Zugriff auf das oberste Element
+	cout << "\n The current top element in stack is " << sta.topElement(stack) << endl;
 
 	return 0;
 }

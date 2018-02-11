@@ -29,5 +29,8 @@
     <ClInclude Include="Stack.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Stack_2.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

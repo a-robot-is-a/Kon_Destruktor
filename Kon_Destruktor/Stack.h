@@ -1,5 +1,10 @@
 #pragma once
 
+/*
+	gefunden auf: https://www.hackerearth.com/practice/data-structures
+	/stacks/basics-of-stacks/tutorial/
+*/
+
 class Stack {
 
 protected:
@@ -14,7 +19,7 @@ public:
 		}
 		else
 		{
-			top = top + 1;            //Incrementing the top position 
+			top = top + 1;        //Incrementing the top position 
 			stack[top] = x;       //Inserting an element on incremented position  
 		}
 	}
@@ -24,5 +29,8 @@ public:
 		return top + 1;
 	}
 
-
+	int topElement(int stack[])
+	{
+		return stack[top];
+	}
 };
