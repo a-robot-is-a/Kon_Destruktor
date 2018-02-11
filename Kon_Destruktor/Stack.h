@@ -9,11 +9,20 @@ class Stack {
 
 protected:
 	int top = -1;
+	int cap;
+	int *stack;
 
 public:
-	void push(int stack[], int x, int n)
+
+	Stack(int cap)
 	{
-		if (top == n - 1)       //If the top position is the last of position of the stack, this means that the stack is full.
+		this->cap = cap;
+		this->stack = new int[cap];
+	}
+
+	void push(int x)
+	{
+		if (top == this->top - 1)       //If the top position is the last of position of the stack, this means that the stack is full.
 		{
 			cout << "\n Stack is full. Overflow condition!" << endl;
 		}
@@ -29,7 +38,7 @@ public:
 		return top + 1;
 	}
 
-	int topElement(int stack[])
+	int topElement()
 	{
 		return stack[top];
 	}

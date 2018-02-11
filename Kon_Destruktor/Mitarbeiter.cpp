@@ -62,23 +62,22 @@ int main() {
 	// Stack
 	cout << "\n Hier beginnt der Stack.h" << endl;
 
-	int stack[3];
-	Stack sta;
-	sta.push(stack, 5, 3);
+	Stack sta(3);
+	sta.push(5);
 
 	cout << "\n Current size of stack is " << sta.size() << endl;
 
-	sta.push(stack, 10, 3);
-	sta.push(stack, 24, 3);
+	sta.push(3);
+	sta.push(3);
 
 	cout << "\n Current size of stack is " << sta.size() << endl;
 
 	// Der Stack ist voll, jetzt wird die overflow Bedingung ausgeloest
 
-	sta.push(stack, 12, 3);
+	sta.push(3);
 
 	// Zugriff auf das oberste Element
-	cout << "\n The current top element in stack is " << sta.topElement(stack) << endl;
+	cout << "\n The current top element in stack is " << sta.topElement() << endl;
 
 	return 0;
 }
