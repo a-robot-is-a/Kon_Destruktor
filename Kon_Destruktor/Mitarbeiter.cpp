@@ -11,9 +11,6 @@ using namespace std;
 #include "Mitarbeiter2.h"
 #include "Stack.h"
 
-#include <cassert>	// eventuell wichtig fuer Stack_2.h
-#include "Stack_2.h"
-
 int main() {
 
 	//Objekte anlegen
@@ -29,6 +26,7 @@ int main() {
 	cout << "\n jules - Objekt:" << endl;
 	cout << " Name: " << jules.name << endl;
 	cout << " Gehalt: " << jules.gehalt << endl;
+
 
 	// Zeiger sind Variablen, die als Werte Speicheradressen enthalten.
 	// Hier ein Zeiger auf die Adresse des Datenobjekts jules.
@@ -59,6 +57,7 @@ int main() {
 	peter.setData("Hartmann", 3500);
 	peter.getData();
 
+
 	// Stack
 	cout << "\n Hier beginnt der Stack.h" << endl;
 
@@ -67,14 +66,14 @@ int main() {
 
 	cout << "\n Current size of stack is " << sta.size() << endl;
 
-	sta.push(3);
-	sta.push(3);
+	sta.push(10);
+	sta.push(24);
 
 	cout << "\n Current size of stack is " << sta.size() << endl;
 
 	// Der Stack ist voll, jetzt wird die overflow Bedingung ausgeloest
 
-	sta.push(3);
+	sta.push(12);
 
 	// Zugriff auf das oberste Element
 	cout << "\n The current top element in stack is " << sta.topElement() << endl;

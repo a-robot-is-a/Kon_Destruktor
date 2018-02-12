@@ -10,19 +10,19 @@ class Stack {
 protected:
 	int top = -1;
 	int cap;
-	int *stack;
+	int *stack = nullptr;	// Einen Zeiger fuer das Array definieren
 
 public:
 
 	Stack(int cap)
 	{
 		this->cap = cap;
-		this->stack = new int[cap];
+		this->stack = new int[cap];	// Ein Datenobjekt auf dem Heap anlegen
 	}
 
 	void push(int x)
 	{
-		if (top == this->top - 1)       //If the top position is the last of position of the stack, this means that the stack is full.
+		if (top == cap - 1)     //If the top position is the last of position of the stack, this means that the stack is full.
 		{
 			cout << "\n Stack is full. Overflow condition!" << endl;
 		}

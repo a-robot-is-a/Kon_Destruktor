@@ -25,7 +25,6 @@
     <ClInclude Include="Mitarbeiter.h" />
     <ClInclude Include="Mitarbeiter2.h" />
     <ClInclude Include="Stack.h" />
-    <ClInclude Include="Stack_2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{985010BA-B2F4-4EBA-B3F1-7F1F61639FC8}</ProjectGuid>
