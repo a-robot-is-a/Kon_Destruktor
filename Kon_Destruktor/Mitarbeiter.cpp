@@ -1,5 +1,5 @@
 /*
-	Diese Quelle stellt die main.
+	Diese Quelle stellt die main().
 	Hier werden die Klassen aufgerufen.
 */
 
@@ -15,7 +15,7 @@ int main() {
 
 	//Objekte anlegen
 
-	Mitarbeiter jim;
+	Mitarbeiter jim;	// Objekt mit dem Standard-Konstruktor 'Mitarbeiter();'
 
 	Mitarbeiter jules("Jules", 2000);
 
@@ -77,6 +77,11 @@ int main() {
 
 	// Zugriff auf das oberste Element
 	cout << "\n The current top element in stack is " << sta.topElement() << endl;
+
+	/*
+	// Nur als Test - pruefen, ob ein Stack leer ist
+	cout << "\n Der Stack ist leer: " << sta.isEmpty() << endl;
+	*/
 
 	return 0;
 }

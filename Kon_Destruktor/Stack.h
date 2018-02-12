@@ -2,7 +2,7 @@
 
 /*
 	gefunden auf: https://www.hackerearth.com/practice/data-structures
-	/stacks/basics-of-stacks/tutorial/
+					/stacks/basics-of-stacks/tutorial/
 */
 
 class Stack {
@@ -41,5 +41,31 @@ public:
 	int topElement()
 	{
 		return stack[top];
+	}
+
+	// Pruefen, ob ein Stack leer ist
+
+	bool isEmpty()
+	{
+		if (top == -1)  //Stack is empty
+			return true;
+		else
+			return false;
+	}
+
+	// Und ein Element vom Stack nehmen?? Sehr fragwuerdig.
+
+	void pop(int n)
+	{
+
+		if (isEmpty())
+		{
+			cout << "\n Stack is empty. Underflow condition!" << endl;
+		}
+		else
+		{
+			top = top - 1; //Decrementing top’s position will detach 
+							// last element from stack            
+		}
 	}
 };
