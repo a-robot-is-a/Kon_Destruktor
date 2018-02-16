@@ -18,7 +18,7 @@ public:
 	{
 		this->cap = cap;
 		this->stack = new int[cap];	// Ein Datenobjekt auf dem Heap anlegen
-		stack[top] = NULL;	// Initialisierung um Nebeneffekte zu vermeiden
+		stack[top] = {};	// Initialisierung um Nebeneffekte zu vermeiden
 	}
 
 	void push(int x)
@@ -64,7 +64,7 @@ public:
 		}
 		else
 		{
-			stack[top] = NULL;
+			stack[top] = {};
 			top = top - 1;
 		}
 	}
