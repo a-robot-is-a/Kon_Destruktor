@@ -31,7 +31,7 @@ int gui()
 
 		Stack stack(eingabe);
 		cout << "\n Der Stack hat " << eingabe << " Plaetze." << endl;
-		//////////////
+
 		cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
 		cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
 		cout << " Programm verlassen - e: " << endl;
@@ -118,47 +118,6 @@ int main() {
 
 	// Stack
 	cout << "\nHier beginnt der Stack.h" << endl;
-
-	Stack sta(3);	// Ein Stack mit drei Plaetzen
-
-	cout << "\n Die 5 wird hinzugefuegt" << endl;
-	sta.push(5);
-	cout << "\n Current size of stack is " << sta.size() << endl;
-
-	cout << "\n Die 10 und die 24 werden hinzugefuegt" << endl;
-	sta.push(10);
-	sta.push(24);
-
-	cout << "\n Current size of stack is " << sta.size() << endl;
-
-	// Der Stack ist voll, jetzt wird die overflow Bedingung ausgeloest
-	cout << "\n Die 12 soll hinzugefuegt werden, aber der Stack ist voll" << endl;
-	sta.push(12);
-
-	// Zugriff auf das oberste Element
-	cout << "\n The current top element in stack is " << sta.topElement() << endl;
-
-	// Das oberste Element vom Stack nehmen
-	cout << "\n\n Peters Test Area" << endl;
-	cout << "\n Das oberste Element(24) wird vom Stack genommen" << endl;
-	sta.pull();
-	cout << "\n The current top element in stack is " << sta.topElement() << endl;
-	cout << "\n Current size of stack is " << sta.size() << endl;
-
-	cout << "\n Das oberste Element(10) wird vom Stack genommen" << endl;
-	sta.pull();
-	cout << "\n The current top element in stack is " << sta.topElement() << endl;
-	cout << "\n Current size of stack is " << sta.size() << endl;
-
-	cout << "\n Das oberste Element(5) wird vom Stack genommen" << endl;
-	sta.pull();
-	cout << "\n The current top element in stack is " << sta.topElement() << endl;
-	cout << "\n Current size of stack is " << sta.size() << endl;
-
-	cout << "\n Das oberste Element soll vom leeren Stack genommen werden" << endl;
-	sta.pull();
-	cout << "\n The current top element in stack is " << sta.topElement() << endl;
-	cout << "\n Current size of stack is " << sta.size() << endl;
 
 	cout << "\n\nEin GUI, um etwas rumzuspielen" << endl;
 	gui();
