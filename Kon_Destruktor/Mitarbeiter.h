@@ -1,18 +1,19 @@
 #pragma once
 
 /*
-
-* Beispiel für eine Klassendefinition
-
+	Beispiel fÃ¼r eine Klassendefinition (mit Datenkapselung)
 */
 
 class Mitarbeiter {
 
-public:
+protected:		// auf die Variablen kann nur ueber die
+			//	Funktionen zugegriffen werden
 	string name;
 	int gehalt;
 
-	// Besserer Konstruktor - Wenn nichts eingegeben wird, wird unbekannt und 0
+public:
+
+	// Ein guter Konstruktor - Wenn nichts eingegeben wird, wird unbekannt und 0
 	// eingetragen
 	Mitarbeiter(string name = "unbekannt", int gehalt = 0)
 	{
@@ -20,8 +21,14 @@ public:
 		this->gehalt = gehalt;
 	}
 	
-	void befoerdern(int betrag)
+	void setData(string n, int g)
 	{
-		gehalt = gehalt + betrag;
+		this->name = n;
+		this->gehalt = g;
+	}
+
+	string getName()
+	{
+		return name;
 	}
 };

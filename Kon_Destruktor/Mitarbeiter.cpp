@@ -7,8 +7,8 @@
 #include <string>
 using namespace std;
 
+
 #include "Mitarbeiter.h"
-#include "Mitarbeiter2.h"
 #include "Stack.h"
 
 // Etwas GUI fuer Stack.h
@@ -75,15 +75,13 @@ int main() {
 
 	Mitarbeiter jim;	// Objekt mit dem Standard-Konstruktor 'Mitarbeiter();'
 
-	Mitarbeiter jules("Jules", 2000);
+	Mitarbeiter jules("Jules", 2000);	// Objekt mit dem definierten Konstruktor
 
 	cout << "\n jim - Objekt:" << endl;
-	cout << " Name: " << jim.name << endl;
-	cout << " Gehalt: " << jim.gehalt << endl;
+	cout << jim.getName() << endl;
 
 	cout << "\n jules - Objekt:" << endl;
-	cout << " Name: " << jules.name << endl;
-	cout << " Gehalt: " << jules.gehalt << endl;
+	cout << jules.getName() << endl;
 
 
 	// Zeiger sind Variablen, die als Werte Speicheradressen enthalten.
@@ -91,10 +89,8 @@ int main() {
 
 	Mitarbeiter *ptr = &jules;
 	cout << "\n Pointer - jules - Objekt:" << endl;
-	cout << " Name: " << (ptr->name) << endl;
+	cout << ptr->getName() << endl;
 
-	ptr->gehalt = 5;
-	cout << " Gehalt: " << (ptr->gehalt) << endl;
 
 	// Ein wenig array - um die ganze Horde zu verwalten :)
 
@@ -103,17 +99,8 @@ int main() {
 
 	for (size_t i = 0; i < cap; i++)
 	{
-		cout << "\n Name: " << mitA[i].name << " Gehalt: " << mitA[i].gehalt << endl;
+		cout << "\n Mitarbeiter Name: " << mitA[i].getName() << endl;
 	}
-
-
-	// Datenkapselung (Mitarbeiter2.h)
-
-	cout << "\n Datenkapselung(Mitarbeiter2.h)" << endl;
-
-	Mitarbeiter2 peter;
-	peter.setData("Hartmann", 3500);
-	peter.getData();
 
 
 	// Stack

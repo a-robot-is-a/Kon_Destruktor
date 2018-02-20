@@ -1,27 +1,34 @@
 #pragma once
 
 /*
-	Versuchen wir ein wenig Datenkapselung
+	Beispiel für eine Klassendefinition (mit Datenkapselung)
 */
 
 class Mitarbeiter2 {
 
-protected:
+protected:		// auf die Variablen kann nur ueber die
+			//	Funktionen zugegriffen werden
 	string name;
 	int gehalt;
 
 public:
-	// Datenkapselung - auf die Variablen kann nur ueber die
-	// Funktionen zugegriffen werden
 
+	// Ein guter Konstruktor - Wenn nichts eingegeben wird, wird unbekannt und 0
+	// eingetragen
+	Mitarbeiter2(string name = "unbekannt", int gehalt = 0)
+	{
+		this->name = name;
+		this->gehalt = gehalt;
+	}
+	
 	void setData(string n, int g)
 	{
 		this->name = n;
 		this->gehalt = g;
 	}
 
-	void getData()
+	string getName()
 	{
-		cout << "\n Name: " << name << " Gehalt: " << gehalt << endl;
+		return name;
 	}
 };
