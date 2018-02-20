@@ -21,14 +21,13 @@ public:
 	
 	
 	
-	void setData(string n, int g)
+	void setData(int g)
 	{
-		this->name = n;
 		this->gehalt = g;
 	}
 
 	string getData()	// read only
 	{
-		return "\n Name: " + name + " Gehalt: " + to_string(gehalt);
+		return "Name: " + name + " Gehalt: " + to_string(gehalt);
 	}
 };

@@ -10,6 +10,7 @@ using namespace std;
 
 #include "Mitarbeiter.h"
 #include "Stack.h"
+#include "Queues.h"
 
 // Etwas GUI fuer Stack.h
 int gui()
@@ -30,7 +31,7 @@ int gui()
 		cin >> eingabe;
 
 		Stack stack(eingabe);
-		cout << "\n Der Stack hat " << eingabe << " Plaetze." << endl;
+		cout << "\n\t Der Stack hat " << eingabe << " Plaetze." << endl;
 
 		cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
 		cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
@@ -45,22 +46,22 @@ int gui()
 				cout << "Geben Sie eine int-Zahl ein: ";
 				cin >> zahl;
 				stack.push(zahl);
-				cout << "\n Der oberste Platz im Stack ist " << stack.size() << endl;
-				cout << "\n Das oberste Element im Stack ist " << stack.topElement() << endl;
+				cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
+				cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
 				cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
 				cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
-				cout << " programm verlassen - e: " << endl;
+				cout << " Programm verlassen - e: " << endl;
 				cin >> auswahl;
 			}
 			if (auswahl == 'd')
 			{
 				cout << "\n Das oberste Element " << stack.topElement() << " wird entfernt" << endl;
 				stack.pull();
-				cout << "\n Das oberste Element im Stack ist " << stack.topElement() << endl;
-				cout << "\n Der oberste Platz im Stack ist " << stack.size() << endl;
+				cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
+				cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
 				cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
 				cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
-				cout << " programm verlassen - e: " << endl;
+				cout << " Programm verlassen - e: " << endl;
 				cin >> auswahl;
 			}
 		}		
@@ -77,19 +78,17 @@ int main() {
 
 	Mitarbeiter jules("Jules", 2000);	// Objekt mit Parameteruebergabe
 
-	cout << "\n jim - Objekt:" << endl;
-	cout << jim.getData() << endl;
+	cout << "\n jim - Objekt: " << jim.getData() << endl;
 
-	cout << "\n jules - Objekt:" << endl;
-	cout << jules.getData() << endl;
+	cout << "\n jules - Objekt: " << jules.getData() << endl;
 
+	jules.setData(1000);	// Jules was lazy the last ten years :)
 
 	// Zeiger sind Variablen, die als Werte Speicheradressen enthalten.
 	// Hier ein Zeiger auf die Adresse des Datenobjekts jules.
 
 	Mitarbeiter *ptr = &jules;
-	cout << "\n Pointer - jules - Objekt:" << endl;
-	cout << ptr->getData() << endl;
+	cout << "\n Pointer - jules - Objekt: " << ptr->getData() << endl;
 
 
 	// Ein wenig array - um die ganze Horde zu verwalten :)
@@ -99,7 +98,7 @@ int main() {
 
 	for (size_t i = 0; i < cap; i++)
 	{
-		cout << "\n Mitarbeiter " << i  <<": " << mitA[i].getData() << endl;
+		cout << "\n\t Mitarbeiter " << i  << ": " << mitA[i].getData() << endl;
 	}
 
 
