@@ -6,20 +6,20 @@
 
 class Mitarbeiter {
 
-protected:		// auf die Variablen kann nur ueber die
-			//	Funktionen zugegriffen werden
+protected:		// auf die Variablen (Felder) kann nur ueber die
+			// Methoden zugegriffen werden
 	string name;
 	int gehalt;
 
 public:
 
-	// Ein guter Konstruktor - Wenn nichts eingegeben wird, wird unbekannt und 0
-	// eingetragen
 	Mitarbeiter(string name = "unbekannt", int gehalt = 0)
 	{
-		this->name = name;
-		this->gehalt = gehalt;
+		this->name = name;		// Ein guter Konstruktor - Wenn nichts eingegeben wird,
+		this->gehalt = gehalt;		// werden unbekannt und 0 eingetragen	
 	}
+	
+	
 	
 	void setData(string n, int g)
 	{
@@ -27,8 +27,8 @@ public:
 		this->gehalt = g;
 	}
 
-	string getName()
+	string getData()	// read only
 	{
-		return name;
+		return "\n Name: " + name + " Gehalt: " + to_string(gehalt);
 	}
 };

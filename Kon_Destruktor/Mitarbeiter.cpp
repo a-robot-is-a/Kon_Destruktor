@@ -73,15 +73,15 @@ int main() {
 
 	//Objekte anlegen
 
-	Mitarbeiter jim;	// Objekt mit dem Standard-Konstruktor 'Mitarbeiter();'
+	Mitarbeiter jim;	// Objekt mit unbekannt und 0
 
-	Mitarbeiter jules("Jules", 2000);	// Objekt mit dem definierten Konstruktor
+	Mitarbeiter jules("Jules", 2000);	// Objekt mit Parameteruebergabe
 
 	cout << "\n jim - Objekt:" << endl;
-	cout << jim.getName() << endl;
+	cout << jim.getData() << endl;
 
 	cout << "\n jules - Objekt:" << endl;
-	cout << jules.getName() << endl;
+	cout << jules.getData() << endl;
 
 
 	// Zeiger sind Variablen, die als Werte Speicheradressen enthalten.
@@ -89,7 +89,7 @@ int main() {
 
 	Mitarbeiter *ptr = &jules;
 	cout << "\n Pointer - jules - Objekt:" << endl;
-	cout << ptr->getName() << endl;
+	cout << ptr->getData() << endl;
 
 
 	// Ein wenig array - um die ganze Horde zu verwalten :)
@@ -99,14 +99,14 @@ int main() {
 
 	for (size_t i = 0; i < cap; i++)
 	{
-		cout << "\n Mitarbeiter Name: " << mitA[i].getName() << endl;
+		cout << "\n Mitarbeiter " << i  <<": " << mitA[i].getData() << endl;
 	}
 
 
 	// Stack
-	cout << "\nHier beginnt der Stack.h" << endl;
+	cout << "\n\n Hier beginnt der Stack.h" << endl;
 
-	cout << "\n\nEin GUI, um etwas rumzuspielen" << endl;
+	cout << "\n Ein GUI, um etwas rumzuspielen" << endl;
 	gui();
 
 	return 0;
