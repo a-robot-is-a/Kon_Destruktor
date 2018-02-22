@@ -7,6 +7,10 @@
 
 class Queues {
 
+private:
+	int *queue = nullptr;
+	int element;
+
 public:
 
 	// this function adds an element to the back of the queue

@@ -2,12 +2,11 @@
 
 /*
 	gefunden auf: https://www.hackerearth.com/practice/data-structures
-					/stacks/basics-of-stacks/tutorial/
 */
 
 class Stack {
 
-protected:
+private:
 	int top = 0;
 	int cap;
 	int *stack = nullptr;	// Einen Zeiger fuer das Array definieren
@@ -25,7 +24,7 @@ public:
 	{
 		if (top == cap)     //If the top position is the last of position of the stack, this means that the stack is full.
 		{
-			cout << "\n Stack is full. Overflow condition!" << endl;
+			cerr << "\n Stack is full. Overflow condition!" << endl;
 		}
 		else
 		{
@@ -60,7 +59,7 @@ public:
 	{
 		if (isEmpty())
 		{
-			cout << "\n Stack is empty. Underflow condition!" << endl;
+			cerr << "\n Stack is empty. Underflow condition!" << endl;
 		}
 		else
 		{

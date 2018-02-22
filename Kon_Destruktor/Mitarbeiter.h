@@ -6,7 +6,7 @@
 
 class Mitarbeiter {
 
-protected:		// auf die Variablen (Felder) kann nur ueber die
+private:		// auf die Variablen (Felder) kann nur ueber die
 			// Methoden zugegriffen werden
 	string name;
 	int gehalt;
@@ -18,8 +18,7 @@ public:
 		name = n;		// Ein guter Konstruktor - Wenn nichts eingegeben wird,
 		gehalt = g;		// werden unbekannt und 0 eingetragen	
 	}
-	
-	
+
 	
 	void setData(int g)
 	{
