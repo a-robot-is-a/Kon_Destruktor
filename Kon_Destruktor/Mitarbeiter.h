@@ -13,17 +13,17 @@ protected:		// auf die Variablen (Felder) kann nur ueber die
 
 public:
 
-	Mitarbeiter(string name = "unbekannt", int gehalt = 0)
+	Mitarbeiter(string n = "unbekannt", int g = 0)
 	{
-		this->name = name;		// Ein guter Konstruktor - Wenn nichts eingegeben wird,
-		this->gehalt = gehalt;		// werden unbekannt und 0 eingetragen	
+		name = n;		// Ein guter Konstruktor - Wenn nichts eingegeben wird,
+		gehalt = g;		// werden unbekannt und 0 eingetragen	
 	}
 	
 	
 	
 	void setData(int g)
 	{
-		this->gehalt = g;
+		gehalt = g;
 	}
 
 	string getData()	// read only

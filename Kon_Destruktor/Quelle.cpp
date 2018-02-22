@@ -84,6 +84,7 @@ int main() {
 
 	jules.setData(1000);	// Jules was lazy the last ten years :)
 
+
 	// Zeiger sind Variablen, die als Werte Speicheradressen enthalten.
 	// Hier ein Zeiger auf die Adresse des Datenobjekts jules.
 

@@ -17,7 +17,7 @@ public:
 	Stack(int cap)
 	{
 		this->cap = cap;
-		this->stack = new int[cap];	// Ein Datenobjekt auf dem Heap anlegen
+		stack = new int[cap];	// Ein Datenobjekt auf dem Heap anlegen
 		stack[top] = {};	// Initialisierung um Nebeneffekte zu vermeiden
 	}
 
