@@ -29,4 +29,14 @@ public:
 	{
 		return "Name: " + name + " Gehalt: " + to_string(gehalt);
 	}
+
+	void setName(string n)
+	{
+		name = n;
+	}
+
+	string getName()
+	{
+		return name;
+	}
 };

@@ -9,8 +9,8 @@ class Queues {
 
 private:
 	int arraySize;
-	int element;
-	int *queue = nullptr;
+	string element;
+	string *queue = nullptr;
 
 	int rear = 0;
 	int front;
@@ -20,10 +20,14 @@ public:
 	Queues(int aS)
 	{
 		arraySize = aS;
-		queue = new int[arraySize];
+		queue = new string[arraySize];
+		for (int i = 0; i < arraySize; i++)
+		{
+			queue[i] = "NULL";
+		}
 	}
 
-	void add(int e)
+	void add(string e)
 	{
 		if (arraySize + 1 == rear)	// if queue is full
 		{
@@ -39,20 +43,19 @@ public:
 
 	void print()
 	{
-		for (int i = 0; i < arraySize + 1; i++)
+		for (int i = 0; i < arraySize; i++)
 		{
-			cout << "\n\t" << "Platz: " << i << "\tMitarbeiter: " << queue[i] << endl;
+			cout << "\n\t" << queue[i] << endl;
 		}
-		cout << "\n\t";
 	}
 
 	void remove()
 	{
 		for (int i = 0; i < arraySize + 1; i++)
 		{
-			if (queue[i] != NULL)
+			if (queue[i] != "")
 			{
-				queue[i] = NULL;	// remove the first element
+				queue[i] = "";	// remove the first element
 				break;
 			}
 		}

@@ -94,14 +94,19 @@ int main() {
 
 
 	// Ein wenig array - um die ganze Horde zu verwalten :)
+	cout << "\n\n Mitarbeiter-Array" << endl;
 
-	const int cap = 5;
+	const int cap = 4;
 	Mitarbeiter mitA[cap];
 
-	for (size_t i = 1; i < cap; i++)
+	for (size_t i = 0; i < cap; i++)
 	{
 		cout << "\n\t Mitarbeiter " << i  << ": " << mitA[i].getData() << endl;
 	}
+
+	mitA[0].setName("Beate");	// populate the arry a bit
+	mitA[1].setName("Gisela");
+	mitA[2].setName("Peter");
 
 	/* Take that out for a second
 	// Stack
@@ -113,23 +118,13 @@ int main() {
 
 	// Queues
 	cout << "\n\n Hier beginnt der Queues.h" << endl;
-	Queues que(2);
-	que.add(1);
-	que.print();
+	Queues que(cap);
 
-	que.add(2);
-	que.print();
-
-	que.add(4);
-	que.print();
-
-	que.add(3);	// exception - queue is full
-	que.print();
-
-	que.remove();
-	que.print();
-
-	que.remove();
+	for (int i = 0; i < cap; i++)
+	{
+		que.add(mitA[i].getName());	// Uebername der Namen von mitA[] in die Schlange
+	}
+	
 	que.print();
 
 	system("pause");
