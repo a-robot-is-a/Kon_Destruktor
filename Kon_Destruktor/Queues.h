@@ -8,14 +8,38 @@
 class Queues {
 
 private:
-	int *queue = nullptr;
+	int arraySize;
 	int element;
+	int *queue = nullptr;
+
+	int rear = 0;
 
 public:
 
+	Queues(int aS)
+	{
+		arraySize = aS;
+		queue = new int[arraySize];
+	}
+
+	void add(int e)
+	{
+		element = e;
+		queue[rear] = element;
+		rear++;
+	}
+	void print()
+	{
+		for (int i = 0; i < arraySize + 1; i++)
+		{
+			cout << "\n\t" << "Platz: " << i << "\tMitarbeiter: " << queue[i] << endl;
+		}
+		cout << "\n\t";
+	}
+
 	// this function adds an element to the back of the queue
 
-	void enqueue(int queue[], int element, int& rear, int arraySize) {
+	void enqueue() {
 		if (rear == arraySize)            // Queue is full
 			cout << ("OverFlow\n");
 		else {

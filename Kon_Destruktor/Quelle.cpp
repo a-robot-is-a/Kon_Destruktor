@@ -102,12 +102,25 @@ int main() {
 		cout << "\n\t Mitarbeiter " << i  << ": " << mitA[i].getData() << endl;
 	}
 
-
+	/* Take that out for a second
 	// Stack
 	cout << "\n\n Hier beginnt der Stack.h" << endl;
 
 	cout << "\n Ein GUI, um etwas rumzuspielen" << endl;
 	gui();
+	*/
 
+	// Queues
+	cout << "\n\n Hier beginnt der Queues.h" << endl;
+	Queues que(5);
+	que.add(1);
+	que.print();
+
+	que.add(0);
+	que.print();
+
+	que.add(4);
+	que.print();
+	system("pause");
 	return 0;
 }
