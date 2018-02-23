@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <array>
 using namespace std;
 
 
@@ -97,7 +98,7 @@ int main() {
 	const int cap = 5;
 	Mitarbeiter mitA[cap];
 
-	for (size_t i = 0; i < cap; i++)
+	for (size_t i = 1; i < cap; i++)
 	{
 		cout << "\n\t Mitarbeiter " << i  << ": " << mitA[i].getData() << endl;
 	}
@@ -112,15 +113,25 @@ int main() {
 
 	// Queues
 	cout << "\n\n Hier beginnt der Queues.h" << endl;
-	Queues que(5);
+	Queues que(2);
 	que.add(1);
 	que.print();
 
-	que.add(0);
+	que.add(2);
 	que.print();
 
 	que.add(4);
 	que.print();
+
+	que.add(3);	// exception - queue is full
+	que.print();
+
+	que.remove();
+	que.print();
+
+	que.remove();
+	que.print();
+
 	system("pause");
 	return 0;
 }

@@ -13,9 +13,10 @@ private:
 	int *queue = nullptr;
 
 	int rear = 0;
+	int front;
 
 public:
-
+	
 	Queues(int aS)
 	{
 		arraySize = aS;
@@ -24,10 +25,18 @@ public:
 
 	void add(int e)
 	{
-		element = e;
-		queue[rear] = element;
-		rear++;
+		if (arraySize + 1 == rear)	// if queue is full
+		{
+			cerr << "\n\tNo more space in the hallway :)" << endl;
+		}
+		else    // add the element on the last position
+		{
+			element = e;
+			queue[rear] = element;
+			rear++;
+		}
 	}
+
 	void print()
 	{
 		for (int i = 0; i < arraySize + 1; i++)
@@ -35,6 +44,18 @@ public:
 			cout << "\n\t" << "Platz: " << i << "\tMitarbeiter: " << queue[i] << endl;
 		}
 		cout << "\n\t";
+	}
+
+	void remove()
+	{
+		for (int i = 0; i < arraySize + 1; i++)
+		{
+			if (queue[i] != NULL)
+			{
+				queue[i] = NULL;	// remove the first element
+				break;
+			}
+		}
 	}
 
 	// this function adds an element to the back of the queue
