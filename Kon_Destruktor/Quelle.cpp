@@ -5,70 +5,12 @@
 
 #include <iostream>
 #include <string>
-#include <array>
 using namespace std;
 
 
 #include "Mitarbeiter.h"
 #include "Stack.h"
 #include "Queues.h"
-
-// Etwas GUI fuer Stack.h
-int gui()
-{
-	char auswahl = 'x';
-	cout << "\n Moechten Sie einen Stack anlegen? y/n: ";
-	cin >> auswahl;
-
-	if (auswahl == 'n')
-	{
-		return 0;
-	}
-
-	if(auswahl == 'y')
-	{ 
-		int eingabe;
-		cout << "\n Geben Sie die Kapazitaet vom Stack ein: ";
-		cin >> eingabe;
-
-		Stack stack(eingabe);
-		cout << "\n\t Der Stack hat " << eingabe << " Plaetze." << endl;
-
-		cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
-		cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
-		cout << " Programm verlassen - e: " << endl;
-		cin >> auswahl;
-
-		while ('e' != auswahl)
-		{
-			if (auswahl == 's')
-			{
-				int zahl;
-				cout << "Geben Sie eine int-Zahl ein: ";
-				cin >> zahl;
-				stack.push(zahl);
-				cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
-				cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
-				cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
-				cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
-				cout << " Programm verlassen - e: " << endl;
-				cin >> auswahl;
-			}
-			if (auswahl == 'd')
-			{
-				cout << "\n Das oberste Element " << stack.topElement() << " wird entfernt" << endl;
-				stack.pull();
-				cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
-				cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
-				cout << "\n Eine Zahl auf dem Stack speichern - s eingeben: " << endl;
-				cout << " Eine Zahl vom Stack nehmen - d eingeben: " << endl;
-				cout << " Programm verlassen - e: " << endl;
-				cin >> auswahl;
-			}
-		}		
-	}
-	return 0;
-}
 
 
 int main() {
@@ -108,14 +50,6 @@ int main() {
 	mitA[1].setName("Gisela");
 	mitA[2].setName("Peter");
 
-	/* Take that out for a second
-	// Stack
-	cout << "\n\n Hier beginnt der Stack.h" << endl;
-
-	cout << "\n Ein GUI, um etwas rumzuspielen" << endl;
-	gui();
-	*/
-
 	// Queues
 	cout << "\n\n Hier beginnt der Queues.h" << endl;
 	Queues que(cap);
@@ -127,6 +61,15 @@ int main() {
 	
 	que.print();
 
-	system("pause");
+	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
+	Stack stack(cap);
+	stack.push(que.firstOne());	// Das erste Element aus der Schlange auf den Stack
+	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
+	cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
+
+	cout << "\n\n In der Schlange siehts jetzt so aus:" << endl;
+	que.remove();	// Das erste Element aus der Schlange entfernen
+	que.print();
+
 	return 0;
 }

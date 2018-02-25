@@ -9,18 +9,18 @@ class Stack {
 private:
 	int top = 0;
 	int cap;
-	int *stack = nullptr;	// Einen Zeiger fuer das Array definieren
+	string *stack = nullptr;	// Einen Zeiger fuer das Array definieren
 
 public:
 
 	Stack(int cap)
 	{
 		this->cap = cap;
-		stack = new int[cap];	// Ein Datenobjekt auf dem Heap anlegen
+		stack = new string[cap];	// Ein Datenobjekt auf dem Heap anlegen
 		stack[top] = {};	// Initialisierung um Nebeneffekte zu vermeiden
 	}
 
-	void push(int x)
+	void push(string x)
 	{
 		if (top == cap)     //If the top position is the last of position of the stack, this means that the stack is full.
 		{
@@ -38,7 +38,7 @@ public:
 		return top;
 	}
 
-	int topElement()
+	string topElement()
 	{
 		return stack[top];
 	}
@@ -63,7 +63,7 @@ public:
 		}
 		else
 		{
-			stack[top] = {};
+			stack[top] = "";
 			top = top - 1;
 		}
 	}

@@ -55,11 +55,17 @@ public:
 		{
 			if (queue[i] != "")
 			{
-				queue[i] = "";	// remove the first element
+				queue[i] = "unbekannt";	// remove the first element
 				break;
 			}
 		}
 	}
+
+	string firstOne()
+	{
+		return queue[0];
+	}
+
 
 	// this function adds an element to the back of the queue
 
