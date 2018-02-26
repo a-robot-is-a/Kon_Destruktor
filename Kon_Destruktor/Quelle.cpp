@@ -71,5 +71,15 @@ int main() {
 	que.remove();	// Das erste Element aus der Schlange entfernen
 	que.print();
 
+	// nochmal zum testen
+	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
+	stack.push(que.firstOne());	// Das erste Element aus der Schlange auf den Stack
+	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
+	cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
+
+	cout << "\n\n In der Schlange siehts jetzt so aus:" << endl;
+	que.remove();	// Das erste Element aus der Schlange entfernen
+	que.print();
+
 	return 0;
 }

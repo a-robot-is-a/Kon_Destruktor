@@ -13,7 +13,7 @@ private:
 	string *queue = nullptr;
 
 	int rear = 0;
-	int front;
+	int front = 0;
 
 public:
 	
@@ -51,19 +51,21 @@ public:
 
 	void remove()
 	{
-		for (int i = 0; i < arraySize + 1; i++)
+		queue[front] = "unbekannt";	// remove the first element
+
+		// move up
+		if (queue[front] == "unbekannt")
 		{
-			if (queue[i] != "")
+			for (int i = 1; i < arraySize; i++)
 			{
-				queue[i] = "unbekannt";	// remove the first element
-				break;
+				queue[i - 1] = queue[i];
 			}
-		}
+		}		
 	}
 
-	string firstOne()
-	{
-		return queue[0];
+
+	string firstOne() {
+		return queue[front];
 	}
 
 
