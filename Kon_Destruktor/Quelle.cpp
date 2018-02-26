@@ -63,15 +63,15 @@ int main() {
 
 	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
 	Stack stack(cap);
-	stack.push(que.firstOne());	// Das erste Element aus der Schlange auf den Stack
+	stack.push(que.firstOne());	// get the first element of the queue on stack
 	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
 	cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
 
 	cout << "\n\n In der Schlange siehts jetzt so aus:" << endl;
-	que.remove();	// Das erste Element aus der Schlange entfernen
+	que.remove();	// and delete the first element from queue
 	que.print();
 
-	// nochmal zum testen
+	// again
 	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
 	stack.push(que.firstOne());	// Das erste Element aus der Schlange auf den Stack
 	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
@@ -81,5 +81,14 @@ int main() {
 	que.remove();	// Das erste Element aus der Schlange entfernen
 	que.print();
 
+	// und die Schlange auffuellen :)
+	cout << "\n\n Die Schlange auffuellen:" << endl;
+	que.add("Petra");
+	que.add("Heidi");
+	que.add("Olivia");
+	que.print();
+
+	cout << "\n\n Overflow exception ausloesen" << endl;
+	que.add("Anna");
 	return 0;
 }

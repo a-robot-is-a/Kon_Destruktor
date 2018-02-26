@@ -29,7 +29,7 @@ public:
 
 	void add(string e)
 	{
-		if (arraySize + 1 == rear)	// if queue is full
+		if (arraySize == rear)	// if queue is full
 		{
 			cerr << "\n\tNo more space in the hallway :)" << endl;
 		}
@@ -53,18 +53,19 @@ public:
 	{
 		queue[front] = "unbekannt";	// remove the first element
 
-		// move up
+									// and move up
 		if (queue[front] == "unbekannt")
 		{
 			for (int i = 1; i < arraySize; i++)
 			{
-				queue[i - 1] = queue[i];
+					queue[i - 1] = queue[i];
+					rear = i - 2;				
 			}
-		}		
+		}
 	}
 
-
-	string firstOne() {
+	string firstOne()
+	{
 		return queue[front];
 	}
 
