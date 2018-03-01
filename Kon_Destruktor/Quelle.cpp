@@ -90,5 +90,12 @@ int main() {
 
 	cout << "\n\n Overflow exception ausloesen" << endl;
 	que.add("Anna");
+
+	cout << "\n\n Underflow exception ausloesen" << endl;
+	for (int i = 0; i < cap + 1; i++)
+	{
+		que.remove();
+	}
+
 	return 0;
 }
