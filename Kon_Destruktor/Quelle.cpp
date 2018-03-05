@@ -11,6 +11,7 @@ using namespace std;
 #include "Mitarbeiter.h"
 #include "Stack.h"
 #include "Queues.h"
+#include "HashTable.h"
 
 
 int main() {
@@ -96,6 +97,12 @@ int main() {
 	{
 		que.remove();
 	}
+
+	// Hash Table
+	cout << "\n\n Hash Table Vorbetrachtung" << endl;
+	string S = "ababcd";
+	HashTable ht;
+	ht.countFre(S);
 
 	return 0;
 }

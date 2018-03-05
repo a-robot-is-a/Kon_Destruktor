@@ -24,6 +24,9 @@
     <ClInclude Include="Queues.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="HashTable.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Quelle.cpp">

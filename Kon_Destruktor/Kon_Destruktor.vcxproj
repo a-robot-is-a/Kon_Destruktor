@@ -22,6 +22,7 @@
     <ClCompile Include="Quelle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Mitarbeiter.h" />
     <ClInclude Include="Queues.h" />
     <ClInclude Include="Stack.h" />
