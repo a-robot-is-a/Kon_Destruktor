@@ -99,7 +99,13 @@ int main() {
 	}
 
 	// Hash Table
+	/*
 	cout << "\n\n Hash Table Vorbetrachtung" << endl;
+	string S = "ababcd";
+	HashTable ht;
+	ht.countFre(S);
+	*/
+	cout << "\n\n Hash Table 2" << endl;
 	string S = "ababcd";
 	HashTable ht;
 	ht.countFre(S);

@@ -6,10 +6,8 @@ gefunden auf: https://www.hackerearth.com/practice/data-structures
 
 class HashTable {
 
-private:
-	int *Frequency = nullptr;
-
 public:
+	/*
 	// O (26 * N), wobei N die Größe der Zeichenkette ist und 26 mögliche Zeichen
 	void countFre(string S)
 	{
@@ -17,18 +15,24 @@ public:
 		{
 			int frequency = 0;
 			for (unsigned int i = 0; i < S.length(); ++i)
+			{
 				if (S[i] == c)
+				{
 					frequency++;
-			cout << c << ' ' << frequency << endl;
+				}					
+			}
+
+			if (frequency > 0)
+			{
+				cout << "\n\t" << c << " x "<< frequency << endl;
+			}
 		}
 	}
+	*/
 
+	// The complexity of this approach is O(N) where N is the size of the string.
 
-/*
-	HashTable()
-	{
-		Frequency = new int[26];
-	}
+	int Frequency[26];	
 
 	int hashFunc(char c)
 	{
@@ -37,13 +41,22 @@ public:
 
 	void countFre(string S)
 	{
-		for (int i = 0; i < S.length(); ++i)
+		for (int i = 0; i < 26; i++)
+		{
+			Frequency[i] = NULL;
+		}
+		for (unsigned int i = 0; i < S.length(); ++i)
 		{
 			int index = hashFunc(S[i]);
 			Frequency[index]++;
 		}
 		for (int i = 0; i < 26; ++i)
-			cout << (char)(i + ’a’) << ‘ ‘ << Frequency[i] << endl;
+		{
+			if (Frequency[i] > 0)
+			{
+				cout << "\n\t" << (char)(i + 'a') << " x " << Frequency[i] << endl;
+			}
+		}
 	}
-*/
+
 };
