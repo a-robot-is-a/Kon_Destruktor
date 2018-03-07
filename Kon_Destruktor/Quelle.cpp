@@ -12,6 +12,7 @@ using namespace std;
 #include "Stack.h"
 #include "Queues.h"
 #include "HashTable.h"
+#include "Map.h"
 
 
 int main() {
@@ -109,6 +110,10 @@ int main() {
 	string S = "ababcd";
 	HashTable ht;
 	ht.countFre(S);
+
+	Map myMap;
+	myMap.makeMap();
+	myMap.iterate();
 
 	return 0;
 }
