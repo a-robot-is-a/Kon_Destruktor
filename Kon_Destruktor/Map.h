@@ -14,9 +14,10 @@ private:
 	map<char, int> m;
 
 public:
+
 	void makeMap()
 	{
-		for (char c = 'a'; c < 'z'; c++)
+		for (char c = 'a'; c <= 'z'; c++)
 		{
 			x.first = c;
 			x.second = (int)c;

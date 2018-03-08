@@ -99,21 +99,11 @@ int main() {
 		que.remove();
 	}
 
-	// Hash Table
-	/*
-	cout << "\n\n Hash Table Vorbetrachtung" << endl;
+	// Hash Table :)
+	cout << "\n\n Hash Table" << endl;
 	string S = "ababcd";
 	HashTable ht;
 	ht.countFre(S);
-	*/
-	cout << "\n\n Hash Table 2" << endl;
-	string S = "ababcd";
-	HashTable ht;
-	ht.countFre(S);
-
-	Map myMap;
-	myMap.makeMap();
-	myMap.iterate();
 
 	return 0;
 }
