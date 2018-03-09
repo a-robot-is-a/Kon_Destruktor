@@ -105,5 +105,16 @@ int main() {
 	HashTable ht;
 	ht.countFre(S);
 
+	// Map
+	cout << "\n\n Map" << endl;
+	
+	string s1 = "Hallo";
+	string s2 = "Welt";
+
+	Map myMap(s1);
+	myMap.insertString();
+
+	myMap.iterate();
+
 	return 0;
 }

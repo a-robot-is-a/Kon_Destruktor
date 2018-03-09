@@ -2,7 +2,6 @@
 
 /*
 	American Standard Code for Information Interchange
-	Beispiel gefunden bei https://youtu.be/k-nSyfh6jr8
 */
 
 #include <map>
@@ -10,33 +9,47 @@
 class Map {
 
 private:
-	pair<char, int> x;
-	map<char, int> m;
+	pair<string, int> x;
+	map<string, int> m;
+	string s;
+	int index = 0;
 
 public:
-
-	void makeMap()
+	
+	Map(string in)	// Konstruktor uebernimmt den string.
 	{
-		for (char c = 'a'; c <= 'z'; c++)
-		{
-			x.first = c;
-			x.second = (int)c;
+		s = in;
+	}
 
-			m.insert(x);	// In den assoziativen Container direkt addressieren
-		}
+	int hashFunc()
+	{
+		for (int i = 0; i < s.length(); i++)
+		{
+			int asc = (char)(s[i]);	// Die Zeichen aus dem String nach ASCII Dez konvertieren
+
+			index += (char)(s[i]); // Die ASCII Dez addieren und Modulo mit 2069
+
+			return index;
+		}		
+	}
+
+	void insertString()
+	{
+		hashFunc();
+
+		x.first = s;
+		x.second = index;	// Das Paar mit dem berechneten Index.
+
+		m.insert(x);	// In den assoziativen Container direkt addressieren.		
 	}
 
 	void iterate()
 	{
-		map<char, int> ::iterator it = m.begin();
+		map<string, int> ::iterator it = m.begin();
 
-		for (it = m.begin(); it != m.end(); it++)
+		for (it; it != m.end(); it++)
 		{
-			cout << (*it).first << " " << (*it).second << endl;
+			cout << "\n\t" << it->first << " => Index " << it->second << endl;
 		}
-
-		cout << "Find a value" << endl;
-		it = m.find('j');
-		cout << (*it).second << endl;
 	}
 };
