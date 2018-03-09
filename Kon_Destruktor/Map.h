@@ -11,6 +11,8 @@ class Map {
 private:
 	pair<string, int> x;
 	map<string, int> m;
+
+	int asc = 0;
 	string s;
 	int index = 0;
 
@@ -25,12 +27,12 @@ public:
 	{
 		for (int i = 0; i < s.length(); i++)
 		{
-			int asc = (char)(s[i]);	// Die Zeichen aus dem String nach ASCII Dez konvertieren
+			asc += (char)(s[i]);	// Die Zeichen aus dem String nach ASCII Dez konvertieren
+									// und addieren.
+		}
+		index = asc % 13;// Modulu mit 13
 
-			index += (char)(s[i]); // Die ASCII Dez addieren und Modulo mit 2069
-
-			return index;
-		}		
+		return index;
 	}
 
 	void insertString()
