@@ -7,24 +7,41 @@ private:
 	{
 		int index;
 		string data;
-		struct node *next = nullptr;
+		node *next;
 	};
 
-public:
+	node *neuesElement = nullptr;
+
+	node *ptr = NULL;
+
+public:	
+
 	LinkedList(int index, string s)
 	{
 		// Den Kopf erstellen
-		node *head = new node();
-		head->index = index;
-		head->data = s;
-		head->next = NULL;
+		neuesElement = new node();
+		neuesElement->index = index;
+		neuesElement->data = s;
+		neuesElement->next = ptr;
+		ptr = neuesElement;
 	}
 	
 	void nachfolger(int index, string s)
 	{
-		node *neuesElement = new node();
+		neuesElement = new node();
 		neuesElement->index = index;
 		neuesElement->data = s;
-		neuesElement->next = neuesElement;
+		neuesElement->next = ptr;
+		ptr = neuesElement;
+	}
+
+	void getData()
+	{
+		while (ptr)
+		{
+			cout << "\n\t" << ptr->index << " " << ptr->data << " " << ptr->next << endl;
+
+			ptr = ptr->next;
+		}
 	}
 };

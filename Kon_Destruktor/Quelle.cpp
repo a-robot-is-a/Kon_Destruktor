@@ -116,5 +116,13 @@ int main() {
 
 	myMap.iterate();
 
+	// Linked List
+	cout << "\n\n Listen Test" << endl;
+	LinkedList list(45, "Hallo");
+	list.nachfolger(42, "Welt");
+	list.nachfolger(23, "Hallo Welt");
+
+	list.getData();
+
 	return 0;
 }
