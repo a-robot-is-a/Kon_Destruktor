@@ -5,6 +5,7 @@
 */
 
 #include <map>
+#include <list>
 
 class Map {
 
@@ -53,5 +54,23 @@ public:
 		{
 			cout << "\n\t" << it->first << " => Index " << it->second << endl;
 		}
+	}
+
+	// Next step - create a linked list
+
+	list<string> dieListe;
+
+	void push(string in)
+	{
+		dieListe.push_back(in);	// Am Ende einfuegen
+	}
+
+	void read()
+	{
+		for (auto it = dieListe.begin(); it != dieListe.end(); ++it)
+		{
+			cout << "\n\t" << *it << " ";
+		}
+
 	}
 };
