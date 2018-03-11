@@ -5,7 +5,6 @@
 */
 
 #include <map>
-#include <list>
 
 class Map {
 
@@ -58,19 +57,21 @@ public:
 
 	// Next step - create a linked list
 
-	list<string> dieListe;
-
-	void push(string in)
+	struct list_node
 	{
-		dieListe.push_back(in);	// Am Ende einfuegen
-	}
+		int index;
+		string data;
+		struct list_node *next;
+	};
 
-	void read()
-	{
-		for (auto it = dieListe.begin(); it != dieListe.end(); ++it)
-		{
-			cout << "\n\t" << *it << " ";
-		}
+	typedef struct list_node* node;
 
+	node insert_right(node list, int index, string data) {
+		node new_node = (node)malloc(sizeof(struct list_node));
+		new_node->index;
+		new_node->data = data;
+		new_node->next = list->next;
+		list->next = new_node;
+		return new_node;
 	}
 };

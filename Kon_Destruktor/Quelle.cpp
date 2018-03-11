@@ -116,13 +116,5 @@ int main() {
 
 	myMap.iterate();
 
-	// Liste fuer den Daemon
-	cout << "\n\n Liste" << endl;
-	myMap.push("Hallo");
-	myMap.push("Welt");
-	myMap.push("Hallo Welt");
-	myMap.read();
-
-
 	return 0;
 }
