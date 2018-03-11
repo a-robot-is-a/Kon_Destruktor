@@ -13,6 +13,8 @@ using namespace std;
 #include "Queues.h"
 #include "HashTable.h"
 #include "Map.h"
+#include "LinkedList.h"
+#include "Chaining.h"
 
 
 int main() {
@@ -107,22 +109,28 @@ int main() {
 
 	// Map
 	cout << "\n\n Map" << endl;
-	
-	string s1 = "Hallo";
-	string s2 = "Welt";
-
-	Map myMap(s1);
-	myMap.insertString();
+	Map myMap;
+	myMap.insertString("Hallo");
+	myMap.insertString("Welt");
 
 	myMap.iterate();
 
 	// Linked List
 	cout << "\n\n Listen Test" << endl;
-	LinkedList list(45, "Hallo");
-	list.nachfolger(42, "Welt");
-	list.nachfolger(23, "Hallo Welt");
+	LinkedList list;
+	list.newElement(42, "Welt");
+	list.newElement(23, "Hallo Welt");
+	list.newElement(42, "Hallo Welt");
 
 	list.getData();
+
+	// Chaining zur Collisionsvermeidung
+	cout << "\n\n Chaining zur Collisionsvermeidung" << endl;
+	Chaining chain;
+	chain.setData("Hallo Welt");
+	chain.setData("Welt Hallo");	// Hash - index == Hash - Index Theoretisch :)
+	chain.getData();
+	
 
 	return 0;
 }

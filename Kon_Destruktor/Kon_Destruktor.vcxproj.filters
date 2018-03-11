@@ -33,6 +33,9 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Chaining.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Quelle.cpp">

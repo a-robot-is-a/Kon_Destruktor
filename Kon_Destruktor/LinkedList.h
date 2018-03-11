@@ -3,6 +3,7 @@
 class LinkedList {
 
 private:
+
 	struct node
 	{
 		int index;
@@ -11,22 +12,11 @@ private:
 	};
 
 	node *neuesElement = nullptr;
-
 	node *ptr = NULL;
 
-public:	
+public:
 
-	LinkedList(int index, string s)
-	{
-		// Den Kopf erstellen
-		neuesElement = new node();
-		neuesElement->index = index;
-		neuesElement->data = s;
-		neuesElement->next = ptr;
-		ptr = neuesElement;
-	}
-	
-	void nachfolger(int index, string s)
+	void newElement(int index, string s)
 	{
 		neuesElement = new node();
 		neuesElement->index = index;

@@ -5,7 +5,6 @@
 */
 
 #include <map>
-#include "LinkedList.h"
 
 class Map {
 
@@ -14,15 +13,11 @@ private:
 	map<string, int> m;
 
 	int asc = 0;
-	string s;
 	int index = 0;
 
+	string s;
+
 public:
-	
-	Map(string in)	// Konstruktor uebernimmt den string.
-	{
-		s = in;
-	}
 
 	int hashFunc()
 	{
@@ -36,8 +31,10 @@ public:
 		return index;
 	}
 
-	void insertString()
+	void insertString(string S)
 	{
+		s = S;
+
 		hashFunc();
 
 		x.first = s;
