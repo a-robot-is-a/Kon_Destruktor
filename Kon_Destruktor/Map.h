@@ -5,6 +5,7 @@
 */
 
 #include <map>
+#include "LinkedList.h"
 
 class Map {
 
@@ -53,25 +54,5 @@ public:
 		{
 			cout << "\n\t" << it->first << " => Index " << it->second << endl;
 		}
-	}
-
-	// Next step - create a linked list
-
-	struct list_node
-	{
-		int index;
-		string data;
-		struct list_node *next;
-	};
-
-	typedef struct list_node* node;
-
-	node insert_right(node list, int index, string data) {
-		node new_node = (node)malloc(sizeof(struct list_node));
-		new_node->index;
-		new_node->data = data;
-		new_node->next = list->next;
-		list->next = new_node;
-		return new_node;
 	}
 };
