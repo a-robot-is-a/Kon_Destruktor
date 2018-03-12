@@ -12,18 +12,18 @@ private:
 	pair<string, int> x;
 	map<string, int> m;
 
+	string s;
 	int asc = 0;
 	int index = 0;
 
-	string s;
 
 public:
-
+	
 	int hashFunc()
 	{
 		for (int i = 0; i < s.length(); i++)
 		{
-			asc += (char)(s[i]);	// Die Zeichen aus dem String nach ASCII Dez konvertieren
+			asc += (int)s[i];	// Die Zeichen aus dem String nach ASCII Dez konvertieren
 									// und addieren.
 		}
 		index = asc % 13;// Modulu mit 13

@@ -21,6 +21,7 @@ public:
 
 	void daemon()
 	{
-
+		// To Do
+		// fuer eine Vergleichsiteration der Indizies eventuell die Map Variablen auf public
 	}
 };

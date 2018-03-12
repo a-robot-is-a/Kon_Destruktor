@@ -124,13 +124,12 @@ int main() {
 
 	list.getData();
 
-	// Chaining zur Collisionsvermeidung
-	cout << "\n\n Chaining zur Collisionsvermeidung" << endl;
+	// Chaining zur Kollisionsvermeidung
+	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
-	chain.setData("Hallo Welt");
-	chain.setData("Welt Hallo");	// Hash - index == Hash - Index Theoretisch :)
+	chain.setData("Hallo Welt");	// Hash - index == Hash - Index Theoretisch :)
+	chain.setData("Welt Hallo");	// Hier entsteht das Problem :)
 	chain.getData();
-	
 
 	return 0;
 }
