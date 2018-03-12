@@ -21,11 +21,10 @@ public:
 	
 	int hashFunc()
 	{
-		for (int i = 0; i < s.length(); i++)
-		{
-			asc += (int)s[i];	// Die Zeichen aus dem String nach ASCII Dez konvertieren
-									// und addieren.
-		}
+		// Die Zeichen aus dem String nach ASCII Dez konvertieren
+		// und addieren.
+		index = accumulate(s.begin(), s.end(), 0);
+		
 		index = asc % 13;// Modulu mit 13
 
 		return index;

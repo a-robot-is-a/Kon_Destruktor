@@ -7,6 +7,8 @@
 #include <string>
 using namespace std;
 
+#include <numeric>	// fuer accumulate in hashFunc
+
 
 #include "Mitarbeiter.h"
 #include "Stack.h"
@@ -127,8 +129,8 @@ int main() {
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
-	chain.setData("Hallo Welt");	// Hash - index == Hash - Index Theoretisch :)
-	chain.setData("Welt Hallo");	// Hier entsteht das Problem :)
+	chain.setData("Hallo Welt");
+	chain.setData("Hallo Welt");
 	chain.getData();
 
 	return 0;
