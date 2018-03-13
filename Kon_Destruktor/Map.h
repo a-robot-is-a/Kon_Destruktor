@@ -13,10 +13,11 @@ private:
 	pair<string, int> x;
 	map<string, int> m;
 
-public:
-
+protected:
 	string s;
 	int index = 0;
+
+public:	
 	
 	int hashFunc()
 	{
