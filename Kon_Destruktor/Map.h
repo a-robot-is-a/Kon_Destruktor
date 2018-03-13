@@ -5,6 +5,7 @@
 */
 
 #include <map>
+#include <numeric>	// fuer accumulate in hashFunc()
 
 class Map {
 
@@ -12,12 +13,10 @@ private:
 	pair<string, int> x;
 	map<string, int> m;
 
-	string s;
-	int asc = 0;
-	int index = 0;
-
-
 public:
+
+	string s;
+	int index = 0;
 	
 	int hashFunc()
 	{
@@ -25,7 +24,7 @@ public:
 		// und addieren.
 		index = accumulate(s.begin(), s.end(), 0);
 		
-		index = asc % 13;// Modulu mit 13
+		index % 13;// Modulu mit 13
 
 		return index;
 	}

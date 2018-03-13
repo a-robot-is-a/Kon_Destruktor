@@ -7,9 +7,6 @@
 #include <string>
 using namespace std;
 
-#include <numeric>	// fuer accumulate in hashFunc
-
-
 #include "Mitarbeiter.h"
 #include "Stack.h"
 #include "Queues.h"
