@@ -11,13 +11,9 @@ private:
 	};
 
 	node *neuesElement = nullptr;
-	node *ptr = NULL;
 
-	node *newList = nullptr;
-	node *newPtr = NULL;
-
-	pair<int, string> x;
-	map<int, string> m;
+	pair<int, node*> x;
+	map<int, node*> m;
 
 	string s;
 	int index = 0;
@@ -35,31 +31,28 @@ public:
 
 	void daemonFunc(string in)
 	{
-		// string in hashFunc einlesen, index mit Indizes in Dictionary vergleichen,
-		// eine Linked List anlegen und an dem Index speichern.
-
 		s = in;
-		hashFunc();
+
+		hashFunc();	// return index
 
 		if (m.empty() == true)  // Create a new entry in the hash table
 		{
-			cerr << "\n\tNone index in hash table" << endl;
+			cerr << "\n\tCreating new index in hash table" << endl;
 
-			x.first = index;
+			x.first = index;	// Index of list head adress
+			x.second = NULL;	// Initialize adress for list
 
 			neuesElement = new node();
 			neuesElement->data = s;
-			neuesElement->next = ptr;
-			ptr = neuesElement;
+			neuesElement->next = x.second;
+			x.second = neuesElement;	// Store the list head pointer.			
 
-			x.second = neuesElement->data;
-
-			m.insert(x);	// In den assoziativen Container direkt addressieren.
+			m.insert(x);	// Store index and list adress - hash table.
 		}
 
 		else  // Check if the index is already in the hash table
 		{
-			map<int, string> ::iterator it = m.begin();
+			map<int, node*> ::iterator it = m.begin();
 
 			for (it; it != m.end(); it++)
 			{
@@ -67,28 +60,31 @@ public:
 				{
 					cerr << "\n\tIndex is already in hash table" << endl;
 
+					// get the list at index and add the entry
+
 					neuesElement = new node();
 					neuesElement->data = s;
-					neuesElement->next = ptr;
-					ptr = neuesElement;
+					neuesElement->next = x.second;
+					x.second = neuesElement;
 				}
+
 				else
 				{
 					// Create a new entry in the hash table
 
 					cout << "\n\tCreating new entry in hash Table..." << endl;
-					x.first = index;
+
+					x.first = index;	// Index of list head adress
+					x.second = NULL;	// Initialize adress for list
 
 					// Assign a new linked list to the entry
 
-					newList = new node();
-					newList->data = s;
-					newList->next = newPtr;
-					newPtr = newList;
+					neuesElement = new node();
+					neuesElement->data = s;
+					neuesElement->next = x.second;
+					x.second = neuesElement;	// Store the list head pointer.			
 
-					x.second = newList->data;
-
-					m.insert(x);	// In den assoziativen Container direkt addressieren.
+					m.insert(x);	// Store index and list adress - hash table.
 				}
 			}
 		}
@@ -96,7 +92,7 @@ public:
 
 	void getHashTable()
 	{
-		map<int, string> ::iterator it = m.begin();
+		map<int, node*> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
@@ -106,21 +102,21 @@ public:
 
 	void getLinkedList_1()
 	{
-		while (ptr)
+		while (x.second)
 		{
-			cout << "\n\t" << ptr->data << " " << ptr->next << endl;
+			cout << "\n\t" << x.second <<" => "<< x.second->data << " " << x.second->next << endl;
 
-			ptr = ptr->next;
+			x.second = x.second->next;
 		}
 	}
 
 	void getLinkedList_2()
 	{
-		while (newList)
+		while (x.second)
 		{
-			cout << "\n\t" << newList->data << " " << newList->next << endl;
+			cout << "\n\t" << x.second << " => " << x.second->data << " " << x.second->next << endl;
 
-			newList = newList->next;
+			x.second = x.second->next;
 		}
 	}
 };
