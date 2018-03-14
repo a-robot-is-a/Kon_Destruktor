@@ -62,10 +62,10 @@ public:
 
 					// get the list at index and add the entry
 
-					neuesElement = new node();
-					neuesElement->data = s;
-					neuesElement->next = x.second;
-					x.second = neuesElement;
+					x.second = new node();
+					x.second->data = s;
+					x.second->next = it->second;
+					it->second = x.second;
 				}
 
 				else
