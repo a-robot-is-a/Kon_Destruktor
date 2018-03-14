@@ -9,11 +9,10 @@
 
 class Map {
 
-private:
-	pair<string, int> x;
-	map<string, int> m;
-
 protected:
+	pair<int, string> x;
+	map<int, string> m;
+
 	string s;
 	int index = 0;
 
@@ -36,19 +35,19 @@ public:
 
 		hashFunc();
 
-		x.first = s;
-		x.second = index;	// Das Paar mit dem berechneten Index.
+		x.first = index;
+		x.second = s;	// Das Paar mit dem berechneten Index.
 
 		m.insert(x);	// In den assoziativen Container direkt addressieren.		
 	}
 
 	void iterate()
 	{
-		map<string, int> ::iterator it = m.begin();
+		map<int, string> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
-			cout << "\n\t" << it->first << " => Index " << it->second << endl;
+			cout << "\n\t" << "Index :" << it->first << " => " << it->second << endl;
 		}
 	}
 };

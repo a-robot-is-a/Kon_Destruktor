@@ -100,20 +100,6 @@ int main() {
 		que.remove();
 	}
 
-	// Hash Table :)
-	cout << "\n\n Hash Table" << endl;
-	string S = "ababcd";
-	HashTable ht;
-	ht.countFre(S);
-
-	// Map
-	cout << "\n\n Map" << endl;
-	Map myMap;
-	myMap.insertString("Hallo");
-	myMap.insertString("Welt");
-
-	myMap.iterate();
-
 	// Linked List
 	cout << "\n\n Listen Test" << endl;
 	LinkedList list;
@@ -126,8 +112,14 @@ int main() {
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
-	chain.setData("Hallo Welt");
-	chain.setData("Hallo Welt");
+
+	cout << "\n\n First entry" << endl;
+	chain.daemonFunc("Hallo Welt");
+
+	cout << "\n\n Collision" << endl;
+	chain.daemonFunc("Welt Hallo");
+
+	cout << "\n\n Currently in hash table" << endl;
 	chain.getData();
 
 	return 0;
