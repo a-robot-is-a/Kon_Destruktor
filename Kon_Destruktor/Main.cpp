@@ -120,7 +120,21 @@ int main() {
 	chain.daemonFunc("Welt Hallo");
 
 	cout << "\n\n Currently in hash table" << endl;
-	chain.getData();
+	chain.getHashTable();
+
+	cout << "\n\n New List" << endl;
+	chain.daemonFunc("Good Night");
+
+	cout << "\n\n The entrys: \n\t Hallo Welt\n\t Welt Hallo\n\t Good Night" << endl;
+
+	cout << "\n\n Currently in hash table" << endl;
+	chain.getHashTable();
+
+	cout << "\n\n The linked list 1" << endl;
+	chain.getLinkedList_1();
+
+	cout << "\n\n The linked list 2" << endl;
+	chain.getLinkedList_2();
 
 	return 0;
 }
