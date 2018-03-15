@@ -15,6 +15,8 @@ private:
 	pair<int, node*> x;
 	map<int, node*> m;
 
+	//node *x = NULL;	// Initialize adress for list
+
 	string s;
 	int index = 0;
 
@@ -40,7 +42,6 @@ public:
 			cerr << "\n\tCreating new index in hash table" << endl;
 
 			x.first = index;	// Index of list head adress
-			x.second = NULL;	// Initialize adress for list
 
 			neuesElement = new node();
 			neuesElement->data = s;
