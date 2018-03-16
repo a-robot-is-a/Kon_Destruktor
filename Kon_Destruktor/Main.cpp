@@ -118,26 +118,18 @@ int main() {
 
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
-	cout << "\n\n The linked list 1" << endl;
-	chain.getLinkedList_1();
-
-	//
+	
 	cout << "\n\n Collision Welt Hallo" << endl;
 	chain.daemonFunc("Welt Hallo");
 
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
-	cout << "\n\n The linked list 1" << endl;
-	chain.getLinkedList_1();
-
-	//
+	
 	cout << "\n\n New List Good Night" << endl;
 	chain.daemonFunc("Good Night");
 
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
-	cout << "\n\n The linked list 2" << endl;
-	chain.getLinkedList_2();
 
 	return 0;
 }

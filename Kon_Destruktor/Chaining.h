@@ -15,8 +15,6 @@ private:
 	pair<int, node*> x;
 	map<int, node*> m;
 
-	//node *x = NULL;	// Initialize adress for list
-
 	string s;
 	int index = 0;
 
@@ -98,26 +96,14 @@ public:
 		for (it; it != m.end(); it++)
 		{
 			cout << "\n\t" << "Index: " << it->first << " => " << it->second << endl;
-		}
-	}
 
-	void getLinkedList_1()
-	{
-		while (x.second)
-		{
-			cout << "\n\t" << x.second <<" => "<< x.second->data << " " << x.second->next << endl;
-
-			x.second = x.second->next;
-		}
-	}
-
-	void getLinkedList_2()
-	{
-		while (x.second)
-		{
-			cout << "\n\t" << x.second << " => " << x.second->data << " " << x.second->next << endl;
-
-			x.second = x.second->next;
+			while (x.second)
+			{
+				cout << "\n\t" << x.second << " => " << x.second->data 
+					<< " " << x.second->next << endl;
+					
+				x.second = x.second->next;
+			}			
 		}
 	}
 };
