@@ -95,20 +95,13 @@ public:
 
 		for (it; it != m.end(); it++)
 		{
-			cout << "\n\t" << "Index: " << it->first << " => " << it->second << endl;						
-		}
-		getElement();
-	}
+			cout << "\n\tCurrently in hash table" << endl;
 
-	void getElement()
-	{
-		while (neuesElement != nullptr)
-		{
-			cout << "\n\t" << neuesElement << " => " << neuesElement->data
+			cout << "\n\t" << " Index: " << it->first << " Adress: " << it->second << endl;
 
-				<< " " << neuesElement->next << endl;
+			cout << "\n\t " << it->second << " " << it->second->data
 
-			neuesElement = neuesElement->next;
+			<< " => " << it->second->next << endl;			
 		}
 	}
 };
