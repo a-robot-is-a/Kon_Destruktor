@@ -74,7 +74,6 @@ public:
 					cout << "\n\tCreating new entry in hash Table..." << endl;
 
 					x.first = index;	// Index of list head adress
-					x.second = NULL;	// Initialize adress for list
 
 					// Assign a new linked list to the entry
 
@@ -99,9 +98,10 @@ public:
 
 			while (x.second)
 			{
-				cout << "\n\t" << x.second << " => " << x.second->data 
+				cout << "\n\t" << x.second << " => " << x.second->data
+
 					<< " " << x.second->next << endl;
-					
+
 				x.second = x.second->next;
 			}			
 		}
