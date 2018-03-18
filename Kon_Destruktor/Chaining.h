@@ -29,15 +29,14 @@ public:
 		return index;
 	}
 
-	void daemonFunc(string in)
+	int daemonFunc(string in)
 	{
 		s = in;
-
 		hashFunc();	// return index
 
 		if (m.empty() == true)  // Create a new entry in the hash table
 		{
-			cerr << "\n\tCreating new index in hash table" << endl;
+			cerr << "\n\tCreating hash table" << endl;
 
 			x.first = index;	// Index of list head adress
 
@@ -47,45 +46,47 @@ public:
 			x.second = neuesElement;	// Store the list head pointer.			
 
 			m.insert(x);	// Store index and list adress - hash table.
+
+			return 0; // exit
 		}
 
-		else  // Check if the index is already in the hash table
+		// Check if the index is already in the hash table
+		
+		map<int, node*> ::iterator it = m.begin();
+
+		for (it; it != m.end(); it++)
 		{
-			map<int, node*> ::iterator it = m.begin();
-
-			for (it; it != m.end(); it++)
+			if (index == it->first)
 			{
-				if (index == it->first)
-				{
-					cerr << "\n\tIndex is already in hash table" << endl;
+				cerr << "\n\tIndex is already in hash table" << endl;
 
-					// get the list at index and add the entry
+				// get the list at index and add the entry
 
-					x.second = new node();
-					x.second->data = s;
-					x.second->next = it->second;
-					it->second = x.second;
-				}
+				neuesElement = new node();
+				neuesElement->data = s;
+				neuesElement->next = it->second;
+				it->second = neuesElement;
 
-				else
-				{
-					// Create a new entry in the hash table
-
-					cout << "\n\tCreating new entry in hash Table..." << endl;
-
-					x.first = index;	// Index of list head adress
-
-					// Assign a new linked list to the entry
-
-					neuesElement = new node();
-					neuesElement->data = s;
-					neuesElement->next = x.second;
-					x.second = neuesElement;	// Store the list head pointer.			
-
-					m.insert(x);	// Store index and list adress - hash table.
-				}
+				return 0;	// exit
 			}
 		}
+			
+		// Create a new entry in the hash table
+
+		cout << "\n\tCreating new index in hash Table..." << endl;
+
+		x.first = index;	// Index of list head adress
+		x.second = nullptr;
+		// Assign a new linked list to the entry
+
+		neuesElement = new node();
+		neuesElement->data = s;
+		neuesElement->next = x.second;
+		x.second = neuesElement;	// Store the list head pointer.			
+
+		m.insert(x);	// Store index and list adress - hash table.
+			
+		return 0;
 	}
 
 	void getHashTable()
@@ -94,16 +95,20 @@ public:
 
 		for (it; it != m.end(); it++)
 		{
-			cout << "\n\t" << "Index: " << it->first << " => " << it->second << endl;
+			cout << "\n\t" << "Index: " << it->first << " => " << it->second << endl;						
+		}
+		getElement();
+	}
 
-			while (x.second)
-			{
-				cout << "\n\t" << x.second << " => " << x.second->data
+	void getElement()
+	{
+		while (neuesElement != nullptr)
+		{
+			cout << "\n\t" << neuesElement << " => " << neuesElement->data
 
-					<< " " << x.second->next << endl;
+				<< " " << neuesElement->next << endl;
 
-				x.second = x.second->next;
-			}			
+			neuesElement = neuesElement->next;
 		}
 	}
 };

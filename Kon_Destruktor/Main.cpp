@@ -115,19 +115,22 @@ int main() {
 
 	cout << "\n\n First entry Hallo Welt" << endl;
 	chain.daemonFunc("Hallo Welt");
-
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
 	
-	cout << "\n\n Collision Welt Hallo" << endl;
+	cout << "\n\n Collision Welt Hallo - check for entry" << endl;
 	chain.daemonFunc("Welt Hallo");
-
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
 	
 	cout << "\n\n New List Good Night" << endl;
 	chain.daemonFunc("Good Night");
+	cout << "\n\n Currently in hash table" << endl;
+	chain.getHashTable();
 
+
+	cout << "\n\nCollision Night Good - check for entry" << endl;
+	chain.daemonFunc("Night Good");
 	cout << "\n\n Currently in hash table" << endl;
 	chain.getHashTable();
 
