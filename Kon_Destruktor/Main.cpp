@@ -112,23 +112,20 @@ int main() {
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
+	
+	cout << "\n\n First entry - Hello World" << endl;
+	chain.daemonFunc("Hello World");
+	chain.getHashTable();
 
-	cout << "\n\n First entry Hallo Welt" << endl;
-	chain.daemonFunc("Hallo Welt");	
+	cout << "\n\nCollision World Hello - check for entry" << endl;
+	chain.daemonFunc("World Hello");
 	chain.getHashTable();
-	
-	cout << "\n\n Collision Welt Hallo - check for entry" << endl;
-	chain.daemonFunc("Welt Hallo");
-	chain.getHashTable();
-	
-	cout << "\n\n New List Good Night" << endl;
+
+	cout << "\n\nNew List - Good Night" << endl;
 	chain.daemonFunc("Good Night");
 	chain.getHashTable();
 
-
-	cout << "\n\nCollision Night Good - check for entry" << endl;
-	chain.daemonFunc("Night Good");
-	chain.getHashTable();
+	chain.getList(1052);
 
 	return 0;
 }

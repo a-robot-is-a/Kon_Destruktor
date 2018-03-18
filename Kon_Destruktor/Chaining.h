@@ -36,7 +36,7 @@ public:
 
 		if (m.empty() == true)  // Create a new entry in the hash table
 		{
-			cerr << "\n\tCreating hash table" << endl;
+			cout << "\n\tCreating hash table" << endl;
 
 			x.first = index;	// Index of list head adress
 
@@ -51,14 +51,14 @@ public:
 		}
 
 		// Check if the index is already in the hash table
-		
+
 		map<int, node*> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
 			if (index == it->first)
 			{
-				cerr << "\n\tIndex is already in hash table" << endl;
+				cout << "\n\tIndex is already in hash table" << endl;
 
 				// get the list at index and add the entry
 
@@ -97,11 +97,31 @@ public:
 		{
 			cout << "\n\tCurrently in hash table" << endl;
 
-			cout << "\n\t" << " Index: " << it->first << " Adress: " << it->second << endl;
+			cout << "\n\t\t" << "Index: " << it->first << " Adress: " << it->second << endl;
 
-			cout << "\n\t " << it->second << " " << it->second->data
+			cout << "\n\t\t" << it->second << " " << it->second->data
 
 			<< " => " << it->second->next << endl;			
+		}
+	}
+
+	void getList(int ind) // get index from user :)
+	{
+		map<int, node*> ::iterator it = m.begin();
+
+		for (it; it != m.end(); it++)
+		{
+			if (ind == it->first)
+			{
+				cout << "\n\nStored list at index " << ind << "	" << it->second << endl;
+				cout << "\nData of the links ";
+
+				while (it->second)
+				{					
+					cout << "\t" << it->second->data;
+					it->second = it->second->next;
+				}
+			}
 		}
 	}
 };
