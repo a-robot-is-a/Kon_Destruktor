@@ -388,7 +388,7 @@ S
 BT
 0 Tc
 /CDF1 11.5 Tf
-198.425 767.48 Td
+139.606 774.567 Td
 0 Tr
 (if) Tj
 ET
@@ -398,7 +398,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-208.347 767.48 Td
+149.528 774.567 Td
 0 Tr
 (\050m\056empty\050\051) Tj
 ET
@@ -408,7 +408,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-268.583 767.48 Td
+209.764 774.567 Td
 0 Tr
 (\075\075) Tj
 ET
@@ -418,7 +418,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-286.299 767.48 Td
+227.48 774.567 Td
 0 Tr
 (true\051) Tj
 ET
@@ -428,7 +428,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-310.394 767.48 Td
+251.575 774.567 Td
 0 Tr
 (\040\040) Tj
 ET
@@ -438,7 +438,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-317.48 767.48 Td
+258.661 774.567 Td
 0 Tr
 (\057\057) Tj
 ET
@@ -448,7 +448,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-328.11 767.48 Td
+269.291 774.567 Td
 0 Tr
 (Create) Tj
 ET
@@ -458,7 +458,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-366.378 767.48 Td
+307.559 774.567 Td
 0 Tr
 (a) Tj
 ET
@@ -468,7 +468,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-376.299 767.48 Td
+317.48 774.567 Td
 0 Tr
 (new) Tj
 ET
@@ -478,7 +478,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-240.591 753.307 Td
+341.575 774.567 Td
 0 Tr
 (entry) Tj
 ET
@@ -488,7 +488,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-270.354 753.307 Td
+371.339 774.567 Td
 0 Tr
 (in) Tj
 ET
@@ -498,7 +498,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-283.11 753.307 Td
+384.095 774.567 Td
 0 Tr
 (the) Tj
 ET
@@ -508,7 +508,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-302.244 753.307 Td
+403.228 774.567 Td
 0 Tr
 (hash) Tj
 ET
@@ -518,9 +518,29 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-330.591 753.307 Td
+431.575 774.567 Td
 0 Tr
 (table) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+276.024 746.221 Td
+0 Tr
+(and) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+298.701 746.221 Td
+0 Tr
+(exit\056) Tj
 ET
 /CDColor cs
 1 1 1 rg
@@ -738,7 +758,7 @@ S
 BT
 0 Tc
 /CDF1 11.5 Tf
-204.803 540.709 Td
+165.827 540.709 Td
 0 Tr
 (cerr) Tj
 ET
@@ -748,7 +768,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-229.606 540.709 Td
+190.63 540.709 Td
 0 Tr
 (\074\074) Tj
 ET
@@ -758,7 +778,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-247.323 540.709 Td
+208.347 540.709 Td
 0 Tr
 (\042\134n\134tIndex) Tj
 ET
@@ -768,7 +788,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-299.055 540.709 Td
+260.079 540.709 Td
 0 Tr
 (is) Tj
 ET
@@ -778,7 +798,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-311.102 540.709 Td
+272.126 540.709 Td
 0 Tr
 (already) Tj
 ET
@@ -788,7 +808,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-352.913 540.709 Td
+313.937 540.709 Td
 0 Tr
 (in) Tj
 ET
@@ -798,7 +818,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-365.669 540.709 Td
+326.693 540.709 Td
 0 Tr
 (hash) Tj
 ET
@@ -808,7 +828,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-260.433 526.535 Td
+355.039 540.709 Td
 0 Tr
 (table\042) Tj
 ET
@@ -818,7 +838,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-292.323 526.535 Td
+386.929 540.709 Td
 0 Tr
 (\074\074) Tj
 ET
@@ -828,9 +848,29 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-310.039 526.535 Td
+404.646 540.709 Td
 0 Tr
 (endl\073) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+276.024 526.535 Td
+0 Tr
+(and) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+298.701 526.535 Td
+0 Tr
+(exit\056) Tj
 ET
 /CDColor cs
 1 1 1 rg
@@ -858,7 +898,7 @@ S
 BT
 0 Tc
 /CDF1 11.5 Tf
-196.299 271.417 Td
+150.236 271.417 Td
 0 Tr
 (cout) Tj
 ET
@@ -868,7 +908,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-221.811 271.417 Td
+175.748 271.417 Td
 0 Tr
 (\074\074) Tj
 ET
@@ -878,7 +918,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-239.528 271.417 Td
+193.465 271.417 Td
 0 Tr
 (\042\134n\134tCreating) Tj
 ET
@@ -888,7 +928,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-307.559 271.417 Td
+261.496 271.417 Td
 0 Tr
 (new) Tj
 ET
@@ -898,7 +938,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-331.654 271.417 Td
+285.591 271.417 Td
 0 Tr
 (entry) Tj
 ET
@@ -908,7 +948,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-361.417 271.417 Td
+315.354 271.417 Td
 0 Tr
 (in) Tj
 ET
@@ -918,7 +958,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-374.173 271.417 Td
+328.11 271.417 Td
 0 Tr
 (hash) Tj
 ET
@@ -928,7 +968,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-253.347 257.244 Td
+356.457 271.417 Td
 0 Tr
 (Table\056\056\056\042) Tj
 ET
@@ -938,7 +978,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-299.409 257.244 Td
+402.52 271.417 Td
 0 Tr
 (\074\074) Tj
 ET
@@ -948,9 +988,29 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-317.126 257.244 Td
+420.236 271.417 Td
 0 Tr
 (endl\073) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+275.669 257.244 Td
+0 Tr
+(return) Tj
+ET
+/CDColor cs
+0 0 0 RG
+0 0 0 rg
+BT
+0 Tc
+/CDF1 11.5 Tf
+309.685 257.244 Td
+0 Tr
+(0\073) Tj
 ET
 /CDColor cs
 1 1 1 rg
@@ -1048,9 +1108,9 @@ S
 BT
 0 Tc
 /CDF1 11.5 Tf
-321.732 441.496 Td
+308.622 441.496 Td
 0 Tr
-(x\056second) Tj
+(neuesElement) Tj
 ET
 /CDColor cs
 0 0 0 RG
@@ -1058,7 +1118,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-367.795 441.496 Td
+380.906 441.496 Td
 0 Tr
 (\055) Tj
 ET
@@ -1068,7 +1128,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-372.047 441.496 Td
+385.158 441.496 Td
 0 Tr
 (\076next) Tj
 ET
@@ -1078,7 +1138,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-403.228 441.496 Td
+416.339 441.496 Td
 0 Tr
 (\075) Tj
 ET
@@ -1088,7 +1148,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-413.858 441.496 Td
+426.969 441.496 Td
 0 Tr
 (it) Tj
 ET
@@ -1098,7 +1158,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-419.528 441.496 Td
+432.638 441.496 Td
 0 Tr
 (\055) Tj
 ET
@@ -1108,7 +1168,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-423.78 441.496 Td
+436.89 441.496 Td
 0 Tr
 (\076second\073) Tj
 ET
@@ -1118,7 +1178,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-337.677 427.323 Td
+342.567 427.323 Td
 0 Tr
 (it) Tj
 ET
@@ -1128,7 +1188,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-343.346 427.323 Td
+348.236 427.323 Td
 0 Tr
 (\055) Tj
 ET
@@ -1138,7 +1198,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-347.598 427.323 Td
+352.488 427.323 Td
 0 Tr
 (\076second) Tj
 ET
@@ -1148,7 +1208,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-395.787 427.323 Td
+400.677 427.323 Td
 0 Tr
 (\075) Tj
 ET
@@ -1158,9 +1218,9 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-406.417 427.323 Td
+411.307 427.323 Td
 0 Tr
-(x\056second\073) Tj
+(neuesElement\073) Tj
 ET
 /CDColor cs
 [] 0 d
@@ -1374,7 +1434,7 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-319.606 150.945 Td
+334.488 150.945 Td
 0 Tr
 (node) Tj
 ET
@@ -1384,9 +1444,9 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-348.661 150.945 Td
+363.543 150.945 Td
 0 Tr
-(\052neuesElement) Tj
+(\052x\056second\075) Tj
 ET
 /CDColor cs
 0 0 0 RG
@@ -1394,24 +1454,14 @@ ET
 BT
 0 Tc
 /CDF1 11.5 Tf
-429.449 150.945 Td
-0 Tr
-(\075) Tj
-ET
-/CDColor cs
-0 0 0 RG
-0 0 0 rg
-BT
-0 Tc
-/CDF1 11.5 Tf
-440.079 150.945 Td
+425.197 150.945 Td
 0 Tr
 (nullptr\073) Tj
 ET
 endstream
 endobj
 15 0 obj
-11725
+12241
 endobj
 xref
 0 16
@@ -1430,7 +1480,7 @@ xref
 0000005634 00000 n
 0000005701 00000 n
 0000005982 00000 n
-0000017766 00000 n
+0000018282 00000 n
 trailer
 <<
 /Size 16
@@ -1438,5 +1488,5 @@ trailer
 /Info 1 0 R
 >>
 startxref
-17791
+18307
 %%EOF
