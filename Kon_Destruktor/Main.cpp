@@ -125,7 +125,7 @@ int main() {
 	chain.daemonFunc("Good Night");
 	chain.getHashTable();
 
-	chain.getList(1052);
+	chain.getList(8);
 
 	return 0;
 }
