@@ -24,7 +24,7 @@ public:
 		// und addieren.
 		index = accumulate(s.begin(), s.end(), 0);
 		
-		index % 13;// Modulu mit 13
+		index = index % 29; // Modulu mit 29
 
 		return index;
 	}

@@ -57,9 +57,9 @@ int main() {
 	cout << "\n\n Hier beginnt der Queues.h" << endl;
 	Queues que(cap);
 
-	for (int i = 0; i < cap; i++)
+	for (Mitarbeiter i : mitA)	// Bereichsbaierte Vorschleife C++11
 	{
-		que.add(mitA[i].getName());	// Uebername der Namen von mitA[] in die Schlange
+		que.add(i.getName());	// Uebername der Namen von mitA[] in die Schlange
 	}
 	
 	que.print();
@@ -103,11 +103,16 @@ int main() {
 	// Linked List
 	cout << "\n\n Listen Test" << endl;
 	LinkedList list;
-	list.newElement(42, "Welt");
-	list.newElement(23, "Hallo Welt");
-	list.newElement(42, "Hallo Welt");
+	list.newElement(2, "Hallo");
+	list.newElement(4, "Welt");
+	list.newElement(6, "Programm");
 
-	list.getData();
+	//list.erstesElementLoeschen();
+	//list.loeschen(6);
+	list.loeschen2(4);
+	
+
+	list.ausgabe();
 
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
