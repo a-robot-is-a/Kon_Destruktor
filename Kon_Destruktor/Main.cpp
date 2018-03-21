@@ -107,10 +107,7 @@ int main() {
 	list.newElement(4, "Welt");
 	list.newElement(6, "Programm");
 
-	//list.erstesElementLoeschen();
-	//list.loeschen(6);
-	list.loeschen2(4);
-	
+	list.erstesElementLoeschen(2);
 
 	list.ausgabe();
 

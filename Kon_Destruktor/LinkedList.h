@@ -25,37 +25,45 @@ public:
 		ptr = neuesElement;	// ptr zeigt auf neues Element	
 	}
 
-	void erstesElementLoeschen()
-	{
-		for (neuesElement; neuesElement->next != NULL; neuesElement = neuesElement->next)
-		{
-			if (neuesElement->next->next == NULL) // is first node
-			{
-				neuesElement->next = NULL;
-				break;
-			}
-		}
-	}
-
-	void loeschen(int in)
+	void erstesElementLoeschen(int in) // is first node
 	{
 		while (neuesElement->index != in)
-		{
-			neuesElement = neuesElement->next;
-
-			if (neuesElement->next->next == NULL) // is last node?
+		{			
+			if (neuesElement->next->next == NULL)
 			{
 				neuesElement->next = NULL;
+
 				break;
 			}
+			neuesElement = neuesElement->next;
 		}
 	}
 
-	void loeschen2(int in)
+	void letztesElementLoeschen(int in) // is last node
+	{
+		node *zeiger = NULL;
+
+		while (neuesElement->next != NULL)
+		{
+			if (neuesElement->index == in)
+			{
+				zeiger = neuesElement->next;
+
+				delete neuesElement;
+
+				neuesElement = zeiger;
+
+				break;
+			}
+			neuesElement = neuesElement->next;
+		}
+	}
+
+	void mittElementLoeschen(int in) // is internal node
 	{
 		for (neuesElement; neuesElement->index != in; neuesElement = neuesElement->next)
 		{
-			if (neuesElement->next->index == in) // is internal node?
+			if (neuesElement->next->index == in)
 			{				
 				neuesElement->next = neuesElement->next->next;				
 				
@@ -66,12 +74,12 @@ public:
 
 	void ausgabe()
 	{
-		while (ptr)
+		while (neuesElement != NULL)
 		{
-			cout << "\n\t" << ptr << " " << ptr->index << " " << ptr->data
-				<< " => " << ptr->next << endl;
+			cout << "\n\t" << neuesElement << " " << neuesElement->index << " " << neuesElement->data
+				<< " => " << neuesElement->next << endl;
 
-			ptr = ptr->next;
+			neuesElement = neuesElement->next;
 		}
 	}
 };
