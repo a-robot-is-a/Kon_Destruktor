@@ -61,7 +61,7 @@ int main() {
 	{
 		que.add(i.getName());	// Uebername der Namen von mitA[] in die Schlange
 	}
-	
+
 	que.print();
 
 	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
@@ -114,7 +114,7 @@ int main() {
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
-	
+
 	cout << "\n\n First entry - Hello World" << endl;
 	chain.daemonFunc("Hello World");
 	chain.getHashTable();

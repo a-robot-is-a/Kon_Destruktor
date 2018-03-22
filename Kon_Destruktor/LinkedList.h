@@ -22,16 +22,16 @@ public:
 		neuesElement->index = index;
 		neuesElement->data = s;
 		neuesElement->next = ptr;
-		ptr = neuesElement;	
+		ptr = neuesElement;
 	}
 
 	void Loeschen(int in)
 	{
 		node *zeiger;
 
-		while (neuesElement->next != NULL)
+		while (neuesElement->index != in)
 		{
-			if (neuesElement->index == in) // first node
+			if (neuesElement->next->index == in) // first node
 			{
 				zeiger = neuesElement->next;
 
@@ -49,15 +49,18 @@ public:
 
 					break;
 				}
-			}				
+				else
+				{
+					if (neuesElement->next->index == in) // internal node
+					{
+						neuesElement->next = neuesElement->next->next;
+					}
 
-			if (neuesElement->next->index == in) // internal node
-			{
-				neuesElement->next = neuesElement->next->next;
+					break;
 
-				break;
+				}
+
 			}
-
 			neuesElement = neuesElement->next;
 		}
 	}
