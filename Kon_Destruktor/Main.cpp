@@ -107,7 +107,7 @@ int main() {
 	list.newElement(4, "Welt");
 	list.newElement(6, "Programm");
 
-	list.Loeschen(4);
+	list.Loeschen(2);
 
 	list.ausgabe();
 

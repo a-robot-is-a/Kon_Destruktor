@@ -29,9 +29,9 @@ public:
 	{
 		node *zeiger;
 
-		while (neuesElement->index != in)
+		while (neuesElement->next != NULL)
 		{
-			if (neuesElement->next->index == in) // first node
+			if (neuesElement->index == in) // first node
 			{
 				zeiger = neuesElement->next;
 
@@ -43,23 +43,21 @@ public:
 			}
 			else
 			{
-				if (neuesElement->next->next == NULL) // last node
+				if (neuesElement->next->next == NULL)
 				{
-					neuesElement->next = NULL;	// bug
-
+					neuesElement->next = NULL;	// last node bug
+					
 					break;
 				}
 				else
 				{
-					if (neuesElement->next->index == in) // internal node
+					if (neuesElement->next->index == in)
 					{
-						neuesElement->next = neuesElement->next->next;
+						neuesElement->next = neuesElement->next->next; // internal node
+
+						break;
 					}
-
-					break;
-
 				}
-
 			}
 			neuesElement = neuesElement->next;
 		}
