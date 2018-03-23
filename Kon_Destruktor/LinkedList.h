@@ -45,8 +45,14 @@ public:
 			{
 				if (neuesElement->next->next == NULL)
 				{
-					neuesElement->next = NULL;	// last node bug
-					
+					zeiger = neuesElement;
+
+					zeiger->next = NULL;
+
+					//neuesElement->next = NULL;	// last node bug
+
+					neuesElement = zeiger;
+
 					break;
 				}
 				else

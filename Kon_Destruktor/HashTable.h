@@ -19,7 +19,7 @@ public:
 				if (S[i] == c)
 				{
 					frequency++;
-				}					
+				}
 			}
 
 			if (frequency > 0)
@@ -32,7 +32,7 @@ public:
 
 	// The complexity of this approach is O(N) where N is the size of the string.
 
-	int Frequency[26];	
+	int Frequency[26];
 
 	int hashFunc(char c)
 	{
@@ -43,7 +43,7 @@ public:
 	{
 		for (int i = 0; i < 26; i++)
 		{
-			Frequency[i] = NULL;
+			Frequency[i] = 0;
 		}
 		for (unsigned int i = 0; i < S.length(); ++i)
 		{
