@@ -25,42 +25,53 @@ public:
 		ptr = neuesElement;
 	}
 
-	void Loeschen(int in)
+	void loeschen(int in)
 	{
-		node *zeiger;
+		node *zeiger = NULL;
+		node *zeiger1 = NULL;
 
-		while (neuesElement->next != NULL)
+		if (neuesElement != NULL)
 		{
-			if (neuesElement->index == in) // first node
+			while (neuesElement->next != NULL)
 			{
-				zeiger = neuesElement->next;
-
-				delete neuesElement;
-
-				neuesElement = zeiger;
-
-				break;
-			}
-			else
-			{
-				if (neuesElement->next->next == NULL)
+				if (neuesElement->index == in) // first node
 				{
-					neuesElement->next = NULL;	// last node bug
-					
+					zeiger = neuesElement->next;
+					delete neuesElement;
+					neuesElement = zeiger;
 					break;
 				}
 				else
 				{
-					if (neuesElement->next->index == in)
-					{
-						neuesElement->next = neuesElement->next->next; // internal node
+					zeiger = neuesElement;
 
-						break;
+					while (zeiger->next != NULL)
+					{
+						zeiger1 = zeiger->next;
+
+						if (zeiger1->index == in && zeiger1->next != NULL)
+						{
+							zeiger->next = zeiger1->next;
+							delete zeiger1;
+							break;
+						}
+						//
+						else
+						{
+							if (zeiger1->next == NULL)
+							{
+								zeiger->next = zeiger1->next; // bug :)
+								delete zeiger1;
+								break;
+							}
+						}
+						//
+						zeiger = zeiger1;
 					}
 				}
 			}
-			neuesElement = neuesElement->next;
 		}
+		else { cout << "\n\tKeine Daten zum loeschen" << endl; }
 	}
 
 	void ausgabe()
