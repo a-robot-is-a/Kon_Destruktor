@@ -28,50 +28,36 @@ public:
 	void loeschen(int in)
 	{
 		node *zeiger = NULL;
-		node *zeiger1 = NULL;
 
-		if (neuesElement != NULL)
+		bool smile = false;
+
+		while (neuesElement->index != in)
 		{
-			while (neuesElement->next != NULL)
+			if (neuesElement->next->index == in )
 			{
-				if (neuesElement->index == in) // first node
+				neuesElement->next = neuesElement->next->next;
+				smile = true;
+				break;
+			}
+			else
+			{
+				if (neuesElement->next->next == NULL) // bug area
 				{
 					zeiger = neuesElement->next;
-					delete neuesElement;
-					neuesElement = zeiger;
+					neuesElement->next = zeiger->next;
+					delete zeiger;
+					smile = true;
 					break;
 				}
-				else
-				{
-					zeiger = neuesElement;
-
-					while (zeiger->next != NULL)
-					{
-						zeiger1 = zeiger->next;
-
-						if (zeiger1->index == in && zeiger1->next != NULL)
-						{
-							zeiger->next = zeiger1->next;
-							delete zeiger1;
-							break;
-						}
-						//
-						else
-						{
-							if (zeiger1->next == NULL)
-							{
-								zeiger->next = zeiger1->next; // bug :)
-								delete zeiger1;
-								break;
-							}
-						}
-						//
-						zeiger = zeiger1;
-					}
-				}
 			}
+			neuesElement = neuesElement->next;
 		}
-		else { cout << "\n\tKeine Daten zum loeschen" << endl; }
+		if (smile == false)
+		{
+			zeiger = neuesElement->next;
+			delete neuesElement;
+			neuesElement = zeiger;
+		}
 	}
 
 	void ausgabe()
