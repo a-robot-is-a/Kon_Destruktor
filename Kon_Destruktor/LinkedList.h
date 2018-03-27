@@ -11,6 +11,7 @@ private:
 		node *next;
 	};
 
+	node *root = NULL;
 	node *neuesElement = NULL;
 	node *ptr = NULL;
 
@@ -18,11 +19,27 @@ public:
 
 	void newElement(int index, string s)
 	{
-		neuesElement = new node();
-		neuesElement->index = index;
-		neuesElement->data = s;
-		neuesElement->next = ptr;
-		ptr = neuesElement;
+
+		if (neuesElement == NULL)
+		{
+			neuesElement = new node();
+			neuesElement->index = index;
+			neuesElement->data = s;
+			neuesElement->next = NULL;
+
+			ptr = root = neuesElement;
+		}
+		else
+		{
+			neuesElement = new node();
+			neuesElement->index = index;
+			neuesElement->data = s;
+			neuesElement->next = NULL;
+
+			ptr->next = neuesElement;	// das letzte Element zeigt auf das neue Element
+			ptr = neuesElement;			// das neue Element wird zum Letzten
+		}
+
 	}
 
 	void loeschen(int in)
@@ -31,43 +48,44 @@ public:
 
 		bool smile = false;
 
-		while (neuesElement->index != in)
+		while (root->index != in)
 		{
-			if (neuesElement->next->index == in )
+			if (root->next->index == in && root->next->next != NULL)
 			{
-				neuesElement->next = neuesElement->next->next;
+				root->next = root->next->next;
 				smile = true;
 				break;
 			}
 			else
 			{
-				if (neuesElement->next->next == NULL) // bug area
+				if (root->next->next == NULL) // delete tail (bug area)
 				{
-					zeiger = neuesElement->next;
-					neuesElement->next = zeiger->next;
-					delete zeiger;
+					root->next = NULL;
 					smile = true;
 					break;
 				}
 			}
-			neuesElement = neuesElement->next;
+			root = root->next;
 		}
-		if (smile == false)
+		if (smile == false)	// delete root
 		{
-			zeiger = neuesElement->next;
-			delete neuesElement;
-			neuesElement = zeiger;
+			zeiger = root->next;
+			delete root;
+			root = zeiger;
 		}
 	}
 
 	void ausgabe()
 	{
-		while (neuesElement)
-		{
-			cout << "\n\t" << neuesElement << " " << neuesElement->index << " "
-				<< neuesElement->data << " => " << neuesElement->next << endl;
+		node *zeiger = root;
 
-			neuesElement = neuesElement->next;
+		while (zeiger != NULL)
+		{
+			cout << "\n\t\t" << zeiger << " " << zeiger->index << " "
+				<< zeiger->data << " => " << zeiger->next << endl;
+
+			zeiger = zeiger->next;
 		}
 	}
 };
+
