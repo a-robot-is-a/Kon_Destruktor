@@ -42,49 +42,50 @@ public:
 
 	}
 
+	// TODO - Exception Handling fuer falsche Index-Eingabe :)
+
 	void loeschen(int in)
-	{
-		node *zeiger = NULL;
-
-		bool smile = false;
-
-		while (root->index != in)
-		{
-			if (root->next->index == in && root->next->next != NULL)
-			{
-				root->next = root->next->next;
-				smile = true;
-				break;
-			}
-			else
-			{
-				if (root->next->next == NULL) // delete tail (bug area)
-				{
-					root->next = NULL;
-					smile = true;
-					break;
-				}
-			}
-			root = root->next;
-		}
-		if (smile == false)	// delete root
-		{
-			zeiger = root->next;
-			delete root;
-			root = zeiger;
-		}
-	}
-
-	void ausgabe()
 	{
 		node *zeiger = root;
 
 		while (zeiger != NULL)
 		{
-			cout << "\n\t\t" << zeiger << " " << zeiger->index << " "
-				<< zeiger->data << " => " << zeiger->next << endl;
-
+			if (zeiger->next->index == in && zeiger->next->next != NULL)
+			{
+				zeiger->next = zeiger->next->next;
+				break;
+			}
+			else
+			{
+				if (zeiger->next->index == in && zeiger->next->next == NULL) // delete tail (bug area)
+				{
+					ptr = zeiger;
+					zeiger->next = NULL;
+					break;
+				}
+				else
+				{
+					if (zeiger->index == in) // delete root
+					{
+						zeiger = root->next;
+						delete root;
+						root = zeiger;
+						break;
+					}
+				}
+			}
 			zeiger = zeiger->next;
+		}
+	}
+
+	void ausgabe()
+	{
+		while (root != NULL)
+		{
+			cout << "\n\t\t" << root << " " << root->index << " "
+				<< root->data << " => " << root->next << endl;
+
+			root = root->next;
 		}
 	}
 };
