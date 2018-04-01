@@ -42,37 +42,51 @@ public:
 
 	}
 
-	void loeschen(int in) // bug!
+	void loeschen(int in)
 	{
 		node *zeiger = root;
 
-		while (zeiger != NULL)
+		if (zeiger->next != NULL)
 		{
-			if (zeiger->next->index == in && zeiger->next->next != NULL)
+			while (zeiger->next != NULL)
 			{
-				zeiger->next = zeiger->next->next;
-				break;
-			}
-			else
-			{
-				if (zeiger->next->index == in && zeiger->next->next == NULL) // delete tail (bug area)
+				if (zeiger->next->index == in && zeiger->next->next != NULL)
 				{
-					ptr = zeiger;
-					zeiger->next = NULL;
+					zeiger->next = zeiger->next->next;
 					break;
 				}
 				else
 				{
-					if (zeiger->index == in) // delete root
+					if (zeiger->next->index == in && zeiger->next->next == NULL) // delete tail
 					{
-						zeiger = root->next;
-						delete root;
-						root = zeiger;
+						ptr = zeiger;
+						delete (zeiger->next->next); // help the garbage collection :)
+						zeiger->next = NULL;
 						break;
 					}
+					else
+					{
+						if (zeiger->index == in)
+						{
+							zeiger = root->next;
+							delete root;
+							root = zeiger;
+							break;
+						}
+					}
 				}
+				zeiger = zeiger->next;
 			}
-			zeiger = zeiger->next;
+		}
+		else
+		{
+			if (zeiger->next == nullptr)
+			{
+				ptr = nullptr;
+				root = nullptr;
+
+				cout << "\n\t\tListe komplett geloescht." << endl;
+			}
 		}
 	}
 

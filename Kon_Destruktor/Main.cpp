@@ -15,6 +15,13 @@ using namespace std;
 #include "LinkedList.h"
 #include "Chaining.h"
 
+// threading an das System uebergeben :)
+void print(LinkedList list)
+{
+	list.ausgabe();
+}
+
+
 
 int main() {
 
@@ -107,9 +114,20 @@ int main() {
 	list.newElement(4, "Welt");
 	list.newElement(6, "Programm");
 
-	list.loeschen(6);
+	cout << "\n\n Neue Liste: " << endl;
+	print(list);
 
-	list.ausgabe();
+	cout << "\n\n Loeschen 6" << endl;
+	list.loeschen(6);
+	print(list);
+
+	cout << "\n\n Loeschen 2" << endl;
+	list.loeschen(2);
+	print(list);
+
+	cout << "\n\n Loeschen 4" << endl;
+	list.loeschen(4);
+	print(list);
 
 	// Chaining zur Kollisionsvermeidung
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
