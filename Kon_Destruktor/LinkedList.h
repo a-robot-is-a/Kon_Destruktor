@@ -42,9 +42,7 @@ public:
 
 	}
 
-	// TODO - Exception Handling fuer falsche Index-Eingabe :)
-
-	void loeschen(int in)
+	void loeschen(int in) // bug!
 	{
 		node *zeiger = root;
 
@@ -80,12 +78,19 @@ public:
 
 	void ausgabe()
 	{
-		while (root != NULL)
+		if (root == NULL)
 		{
-			cout << "\n\t\t" << root << " " << root->index << " "
-				<< root->data << " => " << root->next << endl;
+			cout << "\n\t\tKeine Daten" << endl;
+		}
+		else
+		{
+			while (root != NULL)
+			{
+				cout << "\n\t\t" << root << " " << root->index << " "
+					<< root->data << " => " << root->next << endl;
 
-			root = root->next;
+				root = root->next;
+			}
 		}
 	}
 };
