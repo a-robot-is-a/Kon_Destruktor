@@ -23,9 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chaining.h" />
-    <ClInclude Include="HashTable.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Map.h" />
     <ClInclude Include="Mitarbeiter.h" />
     <ClInclude Include="Queues.h" />
     <ClInclude Include="Stack.h" />

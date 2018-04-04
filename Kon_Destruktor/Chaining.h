@@ -1,5 +1,8 @@
 #pragma once
 
+#include <map>
+#include <numeric>	// fuer accumulate in hashFunc()
+
 class Chaining {
 
 private:
@@ -10,42 +13,49 @@ private:
 		node *next;
 	};
 
-	node *neuesElement = nullptr;
+	node *root = NULL;
+	node *neuesElement = NULL;
+	node *ptr = NULL;
 
 	pair<int, node*> x;
 	map<int, node*> m;
 
-	string s;
+	string colorIndex, obj;
 	int index = 0;
 
 public:
 
 	int hashFunc()
 	{
-		index = accumulate(s.begin(), s.end(), 0);
+		index = accumulate(colorIndex.begin(), colorIndex.end(), 0);
 
 		index = index % 29;	// Modulu mit 29
 
 		return index;
 	}
 
-	int daemonFunc(string in)
+	int hashTable(string color, string objekt)
 	{
-		s = in;
-		hashFunc();	// return index
+		colorIndex = color;
+		obj = objekt;
 
-		if (m.empty() == true)  // Create a new entry in the hash table
+		hashFunc();
+
+		if (m.empty() == true)  // Create a new entry in a new hash table
 		{
 			cout << "\n\tCreating hash table" << endl;
 
-			x.first = index;	// Index of list head adress
+			x.first = index;	// Color index of list adress
 
 			neuesElement = new node();
-			neuesElement->data = s;
-			neuesElement->next = x.second;
-			x.second = neuesElement;	// Store the list head pointer.			
+			neuesElement->data = obj;
+			neuesElement->next = NULL;
 
-			m.insert(x);	// Store index and list adress - hash table.
+			ptr = root = neuesElement;
+
+			x.second = root;	// Store the list root.			
+
+			m.insert(x);	// Store index and list root in the hash table.
 
 			return 0; // exit
 		}
@@ -59,33 +69,40 @@ public:
 			if (index == it->first)
 			{
 				cout << "\n\tIndex is already in hash table" << endl;
+				cout << "\n\tAdding a new link" << endl;
 
 				// get the list at index and add the entry
 
 				neuesElement = new node();
-				neuesElement->data = s;
-				neuesElement->next = it->second;
-				it->second = neuesElement;
+				neuesElement->data = obj;
+				neuesElement->next = NULL;
+
+				ptr->next = neuesElement;
+				ptr = neuesElement;
 
 				return 0;	// exit
 			}
 		}
-			
+
 		// Create a new entry in the hash table
 
 		cout << "\n\tCreating new index in hash Table..." << endl;
 
-		x.first = index;	// Index of list head adress
+		x.first = index;	// Index of list root adress
 		x.second = nullptr;
+
 		// Assign a new linked list to the entry
 
 		neuesElement = new node();
-		neuesElement->data = s;
-		neuesElement->next = x.second;
-		x.second = neuesElement;	// Store the list head pointer.			
+		neuesElement->data = obj;
+		neuesElement->next = NULL;
 
-		m.insert(x);	// Store index and list adress - hash table.
-			
+		ptr = root = neuesElement;
+
+		x.second = root;	// Store the list root.			
+
+		m.insert(x);	// Store index and list root in the hash table.
+
 		return 0;
 	}
 
@@ -97,30 +114,32 @@ public:
 		{
 			cout << "\n\tCurrently in hash table" << endl;
 
-			cout << "\n\t\t" << "Index: " << it->first << " Adress: " << it->second << endl;
+			cout << "\n\t\t" << "Index: " << it->first << " Adress: "
+				<< it->second << endl;
 
-			cout << "\n\t\t" << it->second << " " << it->second->data
+			cout << "\n\t\t" << it->second << " " << it->second->data // bug
 
-			<< " => " << it->second->next << endl;			
+				<< " => " << it->second->next << endl;
 		}
 	}
 
-	void getList(int ind) // get index from user :)
+	void getList(int in) // get color for index from user :)
 	{
 		map<int, node*> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
-			if (ind == it->first)
+			if (in == it->first)
 			{
-				cout << "\n\nStored list at index " << ind << "	" << it->second << endl;
-				cout << "\nData of the links ";
+				cout << "\n\n Stored list at index " << in << "	" << it->second << endl;
+				cout << "\n Data of the links: ";
 
 				while (it->second)
-				{					
-					cout << "\t" << it->second->data;
+				{
+					cout << " " << it->second->data;
 					it->second = it->second->next;
 				}
+				cout << endl;
 			}
 		}
 	}

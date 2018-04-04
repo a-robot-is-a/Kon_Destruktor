@@ -24,12 +24,6 @@
     <ClInclude Include="Queues.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="HashTable.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Chaining.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>

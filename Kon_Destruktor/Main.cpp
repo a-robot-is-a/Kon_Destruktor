@@ -10,8 +10,6 @@ using namespace std;
 #include "Mitarbeiter.h"
 #include "Stack.h"
 #include "Queues.h"
-#include "HashTable.h"
-#include "Map.h"
 #include "LinkedList.h"
 #include "Chaining.h"
 
@@ -20,8 +18,6 @@ void print(LinkedList list)
 {
 	list.ausgabe();
 }
-
-
 
 int main() {
 
@@ -133,19 +129,19 @@ int main() {
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
 
-	cout << "\n\n First entry - Hello World" << endl;
-	chain.daemonFunc("Hello World");
+	cout << "\n\n First entry - Green, USB-Stick" << endl;
+	chain.hashTable("Green", "USB-Stick");
 	chain.getHashTable();
 
-	cout << "\n\nCollision World Hello - check for entry" << endl;
-	chain.daemonFunc("World Hello");
+	cout << "\n\n Collision - Green, LED" << endl;
+	chain.hashTable("Green", "LED");
 	chain.getHashTable();
 
-	cout << "\n\nNew List - Good Night" << endl;
-	chain.daemonFunc("Good Night");
+	cout << "\n\n New entry - Blue, DVD-Carton" << endl;
+	chain.hashTable("Blue", "DVD-Carton");
 	chain.getHashTable();
 
-	chain.getList(8);
+	chain.getList(4);
 
 	return 0;
 }
