@@ -45,7 +45,7 @@ public:
 		{
 			cout << "\n\tCreating hash table" << endl;
 
-			x.first = index;	// Color index of list adress
+			x.first = index;	// Color index of list address
 
 			neuesElement = new node();
 			neuesElement->data = obj;
@@ -114,7 +114,7 @@ public:
 		{
 			cout << "\n\tCurrently in hash table" << endl;
 
-			cout << "\n\t\t" << "Index: " << it->first << " Adress: "
+			cout << "\n\t\t" << "Index: " << it->first << " Address: "
 				<< it->second << endl;
 
 			cout << "\n\t\t" << it->second << " " << it->second->data // bug
