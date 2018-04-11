@@ -2,6 +2,7 @@
 
 #include <map>
 #include <numeric>	// fuer accumulate in hashFunc()
+#include <sstream>
 
 class Chaining {
 
@@ -110,10 +111,10 @@ public:
 	{
 		map<int, node*> ::iterator it = m.begin();
 
+		cout << "\nCurrently in hash table" << endl;
+
 		for (it; it != m.end(); it++)
 		{
-			cout << "\n\tCurrently in hash table" << endl;
-
 			cout << "\n\t\t" << "Index: " << it->first << " Address: "
 				<< it->second << endl;
 
@@ -131,7 +132,7 @@ public:
 		{
 			if (in == it->first)
 			{
-				cout << "\n\n Stored list at index " << in << "	" << it->second << endl;
+				cout << "\n\n Stored list at index " << in << " - " << it->second << endl;
 				cout << "\n Data of the links: ";
 
 				while (it->second)
@@ -142,5 +143,35 @@ public:
 				cout << endl;
 			}
 		}
+	}
+
+	string getTableIndexesAndListDataToStore()
+	{
+		map<int, node*> ::iterator it = m.begin();
+		string str;
+		stringstream stream;
+
+		cout << "\n\t" << "Get all possible indexes..." << endl;
+
+		for (it; it != m.end(); it++)
+		{
+			cout << "\n\t\t" << "Index: " << it->first << endl;
+
+			stream << it->first << " ";
+
+			cout << "\n\t\tStoring list data..." << endl;
+
+			while (it->second)
+			{
+				//get the data of the list				
+				stream << it->second->data << " ";
+
+				it->second = it->second->next;
+			}
+			stream << endl;
+		}
+		str = stream.str();
+		
+		return str;
 	}
 };

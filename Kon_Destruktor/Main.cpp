@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>	// read and write
+#include <thread>
 using namespace std;
 
 #include "Mitarbeiter.h"
@@ -13,8 +15,8 @@ using namespace std;
 #include "LinkedList.h"
 #include "Chaining.h"
 
-// threading an das System uebergeben :)
-void print(LinkedList list)
+
+void print(LinkedList list) // threading an das System uebergeben :)
 {
 	list.ausgabe();
 }
@@ -129,19 +131,31 @@ int main() {
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
 	Chaining chain;
 
-	cout << "\n\n First entry - Green, USB-Stick" << endl;
-	chain.hashTable("Green", "USB-Stick");
+	cout << "\n\n First entry - green, USB-Stick" << endl;
+	chain.hashTable("green", "USB-Stick");
+
+	cout << "\n\n Collision - green, LED" << endl;
+	chain.hashTable("green", "LED");
+
+	cout << "\n\n New entry - blue, DVD-Carton" << endl;
+	chain.hashTable("blue", "DVD-Carton");
+
 	chain.getHashTable();
 
-	cout << "\n\n Collision - Green, LED" << endl;
-	chain.hashTable("Green", "LED");
-	chain.getHashTable();
+	// wait, until the getList function is finished...
+	thread t(&Chaining::getList,chain,7);  // get linked list at index 7
 
-	cout << "\n\n New entry - Blue, DVD-Carton" << endl;
-	chain.hashTable("Blue", "DVD-Carton");
-	chain.getHashTable();
+	if (t.joinable()) 
+	{
+		t.join();
+	}
+	// then everything can be saved.
 
-	chain.getList(4);
+	string str = chain.getTableIndexesAndListDataToStore();
+	ofstream write;
+	write.open("Daten.txt");
+	write << str;
+	write.close();
 
 	return 0;
 }
