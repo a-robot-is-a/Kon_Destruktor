@@ -157,21 +157,20 @@ public:
 		{
 			cout << "\n\t\t" << "Index: " << it->first << endl;
 
-			stream << it->first << " ";
+			stream << it->first;
 
 			cout << "\n\t\tStoring list data..." << endl;
 
 			while (it->second)
 			{
 				//get the data of the list				
-				stream << it->second->data << " ";
+				stream << " " << it->second->data;
 
 				it->second = it->second->next;
 			}
-			stream << endl;
+			stream << "\n";
 		}
 		str = stream.str();
-		
 		return str;
 	}
 };
