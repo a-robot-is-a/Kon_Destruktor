@@ -30,6 +30,9 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="FileOperation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

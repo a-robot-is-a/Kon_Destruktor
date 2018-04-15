@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>	// read and write
 #include <thread>
 using namespace std;
 
@@ -14,6 +13,7 @@ using namespace std;
 #include "Queues.h"
 #include "LinkedList.h"
 #include "Chaining.h"
+#include "FileOperation.h"
 
 
 void print(LinkedList list) // threading an das System uebergeben :)
@@ -151,11 +151,25 @@ int main() {
 	}
 	// then everything can be saved.
 
+
+	// file operations
+	cout << "\n\tDateioperationen" << endl;
+
+	cout << "\nWriting to file..." << endl;
+	FileOperation fo;
 	string str = chain.getTableIndexesAndListDataToStore();
-	ofstream write;
-	write.open("Daten.txt");
-	write << str;
-	write.close();
+
+	thread th(&FileOperation::schreiben, fo, str);
+	if (th.joinable()) { th.join(); }
+
+	// read from file
+	fo.lesen();
+
+
+	char end;
+	cout << "\nProgramm beenden? y/n "; cin >> end;
+	if (end == 'y') { return 0; }
+	else { cin >> end; }
 
 	return 0;
 }
