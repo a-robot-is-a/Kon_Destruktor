@@ -155,20 +155,19 @@ int main() {
 	// file operations
 	cout << "\n\tDateioperationen" << endl;
 
-	cout << "\nWriting to file..." << endl;
 	FileOperation fo;
-	string str = chain.getTableIndexesAndListDataToStore();
 
-	thread th(&FileOperation::schreiben, fo, str);
-	if (th.joinable()) { th.join(); }
+	// write to file
+	string str = chain.getTableIndexesAndListDataToStore();
+	fo.schreiben(str);
 
 	// read from file
 	fo.lesen();
 
 
 	char end;
-	cout << "\nProgramm beenden? y/n "; cin >> end;
-	if (end == 'y') { return 0; }
+	cout << "\nProgramm beenden? j "; cin >> end;
+	if (end == 'j') { return 0; }
 	else { cin >> end; }
 
 	return 0;

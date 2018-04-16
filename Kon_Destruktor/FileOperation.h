@@ -5,15 +5,19 @@
 
 class FileOperation {
 
+private:
+
+	fstream stream;
 
 public:
 
 	void schreiben(string str)
-	{	
-		ofstream write;
-		write.open("Daten.txt");
-		write << str;
-		write.close();
+	{
+		cout << "\nWriting to file...\n" << endl;
+
+		stream.open("Daten.txt", ios::out);
+		stream << str;
+		stream.close();
 	}
 
 	void lesen()
@@ -21,26 +25,25 @@ public:
 		{
 			cout << "\nReading from file...\n" << endl;
 
-			ifstream fileSt;
 			string rdStr;
 
 			vector<string> myVec;
 
-			fileSt.open("Daten.txt");
+			stream.open("Daten.txt", ios::in);
 
 			while (true)
 			{
-				getline(fileSt, rdStr, ' ');
+				getline(stream, rdStr, ' ');
 
 				myVec.push_back(rdStr);
 
-				if (fileSt.eof())
+				if (stream.eof())
 				{
 					break;
 				}
 			}
 
-			fileSt.close();
+			stream.close();
 
 			// Verarbeiten
 			int i = 0;
