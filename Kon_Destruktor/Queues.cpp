@@ -1,9 +1,6 @@
-#pragma once
-
 /*
 	gefunden auf: https://www.hackerearth.com/practice/data-structures
 */
-
 
 class Queues {
 

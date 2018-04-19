@@ -1,5 +1,3 @@
-#pragma once
-
 /*
 	Beispiel für eine Klassendefinition (mit Datenkapselung)
 */

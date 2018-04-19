@@ -1,5 +1,3 @@
-#pragma once
-
 #include <fstream>	// read and write
 #include <vector>
 
@@ -8,6 +6,7 @@ class FileOperation {
 private:
 
 	fstream stream;
+	vector<string> myVec;
 
 public:
 
@@ -27,8 +26,6 @@ public:
 
 			string rdStr;
 
-			vector<string> myVec;
-
 			stream.open("Daten.txt", ios::in);
 
 			while (true)
@@ -42,22 +39,24 @@ public:
 					break;
 				}
 			}
-
 			stream.close();
+		}
+		ausgabe();
+	}
+			
+	void ausgabe()
+	{
+		int i = 0;
 
-			// Verarbeiten
-			int i = 0;
+		for (i; i < myVec.size(); i++)
+		{
+			cout << myVec[i];
+
+			i++;
 
 			for (i; i < myVec.size(); i++)
 			{
-				cout << myVec[i];
-
-				i++;
-
-				for (i; i< myVec.size(); i++)
-				{
-					cout << " " << "Listenelement " << myVec[i];
-				}
+				cout << " " << "Listenelement " << myVec[i];
 			}
 		}
 	}

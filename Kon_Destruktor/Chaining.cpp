@@ -1,5 +1,3 @@
-#pragma once
-
 #include <map>
 #include <numeric>	// fuer accumulate in hashFunc()
 #include <sstream>
@@ -171,6 +169,7 @@ public:
 			stream << "\n";
 		}
 		str = stream.str();
+
 		return str;
 	}
 };

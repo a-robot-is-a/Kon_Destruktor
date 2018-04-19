@@ -22,12 +22,12 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Chaining.h" />
-    <ClInclude Include="FileOperation.h" />
-    <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="Mitarbeiter.h" />
-    <ClInclude Include="Queues.h" />
-    <ClInclude Include="Stack.h" />
+    <ClInclude Include="Chaining.cpp" />
+    <ClInclude Include="FileOperation.cpp" />
+    <ClInclude Include="LinkedList.cpp" />
+    <ClInclude Include="Mitarbeiter.cpp" />
+    <ClInclude Include="Queues.cpp" />
+    <ClInclude Include="Stack.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{985010BA-B2F4-4EBA-B3F1-7F1F61639FC8}</ProjectGuid>

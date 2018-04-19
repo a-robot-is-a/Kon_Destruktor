@@ -15,23 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mitarbeiter.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="FileOperation.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Chaining.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="Queues.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Mitarbeiter.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="Chaining.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Stack.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="LinkedList.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Queues.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="FileOperation.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="LinkedList.cpp">
+      <Filter>Quelldateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

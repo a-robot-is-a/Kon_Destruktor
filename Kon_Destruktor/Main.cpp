@@ -1,6 +1,5 @@
 /*
-	Diese Quelle stellt die main().
-	Hier werden die Klassen aufgerufen.
+	main().
 */
 
 #include <iostream>
@@ -8,12 +7,12 @@
 #include <thread>
 using namespace std;
 
-#include "Mitarbeiter.h"
-#include "Stack.h"
-#include "Queues.h"
-#include "LinkedList.h"
-#include "Chaining.h"
-#include "FileOperation.h"
+#include "Mitarbeiter.cpp"
+#include "Stack.cpp"
+#include "Queues.cpp"
+#include "LinkedList.cpp"
+#include "Chaining.cpp"
+#include "FileOperation.cpp"
 
 
 void print(LinkedList list) // threading an das System uebergeben :)
@@ -143,7 +142,7 @@ int main() {
 	chain.getHashTable();
 
 	// wait, until the getList function is finished...
-	thread t(&Chaining::getList,chain,7);  // get linked list at index 7
+	thread t(&Chaining::getList, chain, 7);  // get linked list at index 7
 
 	if (t.joinable()) 
 	{
