@@ -19,15 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="..\..\Test\Test\Chaining.cpp" />
+    <ClCompile Include="..\..\Test\Test\FileOperation.cpp" />
+    <ClCompile Include="..\..\Test\Test\LinkedList.cpp" />
+    <ClCompile Include="..\..\Test\Test\Main.cpp" />
+    <ClCompile Include="..\..\Test\Test\Mitarbeiter.cpp" />
+    <ClCompile Include="..\..\Test\Test\Queues.cpp" />
+    <ClCompile Include="..\..\Test\Test\Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Chaining.cpp" />
-    <ClInclude Include="FileOperation.cpp" />
-    <ClInclude Include="LinkedList.cpp" />
-    <ClInclude Include="Mitarbeiter.cpp" />
-    <ClInclude Include="Queues.cpp" />
-    <ClInclude Include="Stack.cpp" />
+    <ClInclude Include="..\..\Test\Test\Chaining.h" />
+    <ClInclude Include="..\..\Test\Test\FileOperation.h" />
+    <ClInclude Include="..\..\Test\Test\LinkedList.h" />
+    <ClInclude Include="..\..\Test\Test\Mitarbeiter.h" />
+    <ClInclude Include="..\..\Test\Test\Queues.h" />
+    <ClInclude Include="..\..\Test\Test\Stack.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{985010BA-B2F4-4EBA-B3F1-7F1F61639FC8}</ProjectGuid>
