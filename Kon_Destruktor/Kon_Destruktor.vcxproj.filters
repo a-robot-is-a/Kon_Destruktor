@@ -15,45 +15,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Test\Test\Chaining.cpp">
+    <ClCompile Include="Chaining.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\FileOperation.cpp">
+    <ClCompile Include="FileOperation.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\LinkedList.cpp">
+    <ClCompile Include="LinkedList.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\Main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\Mitarbeiter.cpp">
+    <ClCompile Include="Mitarbeiter.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\Queues.cpp">
+    <ClCompile Include="Queues.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Test\Test\Stack.cpp">
+    <ClCompile Include="Stack.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Test\Test\Chaining.h">
+    <ClInclude Include="Chaining.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Test\Test\FileOperation.h">
+    <ClInclude Include="FileOperation.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Test\Test\LinkedList.h">
+    <ClInclude Include="LinkedList.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Test\Test\Mitarbeiter.h">
+    <ClInclude Include="Mitarbeiter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Test\Test\Queues.h">
+    <ClInclude Include="Queues.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Test\Test\Stack.h">
+    <ClInclude Include="Stack.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
