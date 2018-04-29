@@ -37,8 +37,7 @@ using namespace mySpace;
 
 	string Stack::topElement()
 	{
-		string out = stack[top];
-		return out;
+		return stack[top - 1];
 	}
 
 	// Pruefen, ob ein Stack leer ist
