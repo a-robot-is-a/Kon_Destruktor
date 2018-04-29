@@ -1,7 +1,11 @@
 #include "Mitarbeiter.h"
+using namespace mySpace;
 
-Mitarbeiter::Mitarbeiter(string n, int g) :name(n), gehalt(g)
-{}
+string name;
+int gehalt;
+
+Mitarbeiter::Mitarbeiter(string n, int g):name(n), gehalt(g)
+{	}
 
 	void Mitarbeiter::setData(int g)
 	{

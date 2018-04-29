@@ -3,15 +3,17 @@
 */
 
 #include "Queues.h"
+using namespace mySpace;
 
 	int arraySize;
-	string element;
+	//string element;
 	string *queue = nullptr;
 
-	int rear = 0;
-	int front = 0;
+	int rear;
+	int front;
+
 	
-	Queues::Queues(int aS):arraySize(aS)
+	Queues::Queues(int aS):arraySize(aS),front(0),rear(0)
 	{
 		queue = new string[arraySize];
 		for (int i = 0; i < arraySize; i++)
@@ -22,15 +24,14 @@
 
 	void Queues::add(string e)
 	{
-		if (arraySize == rear)	// if queue is full
+		if (front == arraySize)	// if queue is full
 		{
 			cerr << "\n\tNo more space in the hallway :)" << endl;
 		}
-		else    // add the element on the last position
-		{
-			element = e;
-			queue[rear] = element;
-			rear++;
+		else    // add the element on the first position
+		{			
+			queue[front] = e;
+			front++;
 		}
 	}
 
@@ -44,28 +45,25 @@
 
 	void Queues::remove()
 	{
-		if (queue[front] == "unbekannt")
+		if (queue[rear] == "nobody")
 		{
 			cerr << "\n\tNobody in the hallway :)" << endl; // Underflow-exception
 		}
 		else
 		{
-			queue[front] = "unbekannt";	// remove the first element
-										
-			if (queue[front] == "unbekannt")	// and move up
+			// remove the first element and move up
+			
+			for (int i = 1; i < arraySize; i++)
 			{
-				for (int i = 1; i < arraySize; i++)
-				{
-					queue[i - 1] = queue[i];
-					rear = i - 2;
-					queue[i] = "unbekannt";	// reset the place to "0"
-				}
+				queue[i - 1] = queue[i];
+				queue[i] = "nobody";
 			}
+			front--;			
 		}
 	}
 
 	string Queues::firstOne()
 	{
-		return queue[front];
+		return queue[0];
 	}
 

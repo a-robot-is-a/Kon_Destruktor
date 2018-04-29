@@ -6,6 +6,8 @@ using namespace std;
 #include <fstream>
 #include <vector>
 
+namespace mySpace{
+
 class FileOperation 
 {
 
@@ -23,3 +25,4 @@ public:
 
 	void ausgabe();	
 };
+}

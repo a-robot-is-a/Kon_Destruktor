@@ -4,6 +4,8 @@
 using namespace std;
 #include <string>
 
+namespace mySpace{
+
 class Stack {
 
 private:
@@ -24,3 +26,4 @@ public:
 
 	void pull();	
 };
+}

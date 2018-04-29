@@ -4,30 +4,30 @@
 using namespace std;
 #include <string>
 
+namespace mySpace{
+
 class LinkedList {
 
 private:
 
-	struct nod
+	struct node
 	{
 		int index;
 		string data;
-		nod *next;
+		node *next;
 	};
 
-	nod *root;
-	nod *neuesElement;
-	nod *ptr;
-
-	int ind;
-	string dat;
+	node *root;
+	node *neuesElement;
+	node *ptr;
 
 public:
 
-	LinkedList();
+	LinkedList(int index, string s);
 
 	void newElement(int index, string s);
 	void loeschen(int in);
 	void ausgabe();
 
 };
+}

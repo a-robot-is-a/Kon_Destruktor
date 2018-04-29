@@ -8,33 +8,36 @@ using namespace std;
 #include <numeric>	// fuer accumulate in hashFunc()
 #include <sstream>
 
+namespace Space{
+
 class Chaining {
 
 private:
 
-	struct node
+	struct no
 	{
 		string data;
-		node *next;
+		no *next;
 	};
 
-	node *root;
-	node *neuesElement;
-	node *ptr;
+	no *ro;
+	no *nEle;
+	no *pt;
 
-	pair<int, node*> x;
-	map<int, node*> m;
+	pair<int, no*> x;
+	map<int, no*> m;
 
 	string colorIndex, obj;
 	int index;
 
 public:
 
-	Chaining();
+	Chaining(string color, string object);
 
 	int hashFunc();
-	int hashTable(string color, string objekt);
+	int nextElement(string color, string object);
 	void getHashTable();
 	void getList(int in);
 	string getTableIndexesAndListDataToStore();
 };
+}

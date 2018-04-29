@@ -3,14 +3,16 @@
 */
 
 #include "Stack.h"
+using namespace mySpace;
 
-	int top = 0;
 
+	int cap;
+	int top;
 	string *stack = nullptr;	// Einen Zeiger fuer das Array definieren
-
 
 	Stack::Stack(int ca):cap(ca)
 	{
+		top = 0;
 		stack = new string[cap];	// Ein Datenobjekt auf dem Heap anlegen
 		stack[top] = {};	// Initialisierung um Nebeneffekte zu vermeiden
 	}
@@ -22,10 +24,10 @@
 			cerr << "\n Stack is full. Overflow condition!" << endl;
 		}
 		else
-		{
-			top = top + 1;        //Incrementing the top position 
-			stack[top] = x;       //Inserting an element on incremented position  
-		}
+                {
+                        stack[top] = x;       //Inserting an element on incremented position  
+                        top = top + 1;        //Incrementing the top position 
+                }
 	}
 
 	int Stack::size()

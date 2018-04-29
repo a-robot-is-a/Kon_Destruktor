@@ -1,23 +1,43 @@
 #include "Chaining.h"
+using namespace Space;
 
-	struct node
+	struct no
 	{
 		string data;
-		node *next;
+		no *next;
 	};
 
-	node *root = NULL;
-	node *neuesElement = NULL;
-	node *ptr = NULL;
+	no *ro = NULL;
+	no *nEle = NULL;
+	no *pt = NULL;
 
-	pair<int, node*> x;
-	map<int, node*> m;
+	pair<int, no*> x;
+	map<int, no*> m;
 
 	string colorIndex, obj;
-	int index = 0;
+	int index;
 
-	Chaining::Chaining()
-	{}
+	Chaining::Chaining(string color, string object):colorIndex(color),obj(object)
+	{
+		hashFunc();
+
+		// Create a new entry in a new hash table
+		
+		cout << "\n\tCreating hash table" << endl;
+
+		x.first = index;	// Color index of list address
+
+		nEle = new no();
+		nEle->data = obj;
+		nEle->next = NULL;
+
+		pt = ro = nEle;
+
+		x.second = ro;	// Store the list root.			
+
+		m.insert(x);	// Store index and list root in the hash table.
+	}
+
 
 	int Chaining::hashFunc()
 	{
@@ -28,35 +48,16 @@
 		return index;
 	}
 
-	int Chaining::hashTable(string color, string objekt)
+	int Chaining::nextElement(string color, string object)
 	{
 		colorIndex = color;
-		obj = objekt;
+		obj = object;
 
 		hashFunc();
 
-		if (m.empty() == true)  // Create a new entry in a new hash table
-		{
-			cout << "\n\tCreating hash table" << endl;
-
-			x.first = index;	// Color index of list address
-
-			neuesElement = new node();
-			neuesElement->data = obj;
-			neuesElement->next = NULL;
-
-			ptr = root = neuesElement;
-
-			x.second = root;	// Store the list root.			
-
-			m.insert(x);	// Store index and list root in the hash table.
-
-			return 0; // exit
-		}
-
 		// Check if the index is already in the hash table
 
-		map<int, node*> ::iterator it = m.begin();
+		map<int, no*> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
@@ -67,12 +68,12 @@
 
 				// get the list at index and add the entry
 
-				neuesElement = new node();
-				neuesElement->data = obj;
-				neuesElement->next = NULL;
+				nEle = new no();
+				nEle->data = obj;
+				nEle->next = NULL;
 
-				ptr->next = neuesElement;
-				ptr = neuesElement;
+				pt->next = nEle;
+				pt = nEle;
 
 				return 0;	// exit
 			}
@@ -87,13 +88,13 @@
 
 		// Assign a new linked list to the entry
 
-		neuesElement = new node();
-		neuesElement->data = obj;
-		neuesElement->next = NULL;
+		nEle = new no();
+		nEle->data = obj;
+		nEle->next = NULL;
 
-		ptr = root = neuesElement;
+		pt = ro = nEle;
 
-		x.second = root;	// Store the list root.			
+		x.second = ro;	// Store the list root.			
 
 		m.insert(x);	// Store index and list root in the hash table.
 
@@ -102,7 +103,7 @@
 
 	void Chaining::getHashTable()
 	{
-		map<int, node*> ::iterator it = m.begin();
+		map<int, no*> ::iterator it = m.begin();
 
 		cout << "\n\n Currently in hash table" << endl;
 
@@ -119,7 +120,7 @@
 
 	void Chaining::getList(int in) // get color for index from user :)
 	{
-		map<int, node*> ::iterator it = m.begin();
+		map<int, no*> ::iterator it = m.begin();
 
 		for (it; it != m.end(); it++)
 		{
@@ -140,7 +141,7 @@
 
 	string Chaining::getTableIndexesAndListDataToStore()
 	{
-		map<int, node*> ::iterator it = m.begin();
+		map<int, no*> ::iterator it = m.begin();
 		string str;
 		stringstream stream;
 
@@ -167,3 +168,4 @@
 
 		return str;
 	}
+

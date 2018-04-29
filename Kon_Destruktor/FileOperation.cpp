@@ -1,4 +1,5 @@
 #include "FileOperation.h"
+using namespace mySpace;
 
 	void FileOperation::schreiben(string str)
 	{

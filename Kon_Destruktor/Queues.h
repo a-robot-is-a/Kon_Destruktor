@@ -4,13 +4,14 @@
 using namespace std;
 #include <string>
 
+namespace mySpace{
+
 class Queues {
 
 private:
-	int arraySize;
-	string element;
-	string *queue;
 
+	int arraySize;
+	string *queue;
 	int rear;
 	int front;
 
@@ -27,3 +28,4 @@ public:
 	string firstOne();
 	
 };
+}

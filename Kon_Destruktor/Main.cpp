@@ -3,13 +3,15 @@ using namespace std;
 #include <string>
 #include <thread>
 
-
 #include "Mitarbeiter.h"
 #include "Queues.h"
 #include "Stack.h"
 #include "LinkedList.h"
 #include "Chaining.h"
 #include "FileOperation.h"
+
+using namespace mySpace;
+using namespace Space;
 
 void print(LinkedList list)
 {
@@ -121,8 +123,7 @@ int main() {
 
 	cout << "\n\n Verlinkte Listen" << endl;
 
-	LinkedList list;
-	list.newElement(2, "Hallo");
+	LinkedList list(2, "Hallo");
 	list.newElement(4, "Welt");
 	list.newElement(6, "Programm");
 
@@ -132,10 +133,10 @@ int main() {
 	cout << "\n\n Loeschen 6" << endl;
 	list.loeschen(6);
 	print(list);
-	
+
 	cout << "\n\n Loeschen 2" << endl;
 	list.loeschen(2);
-	print(list);	
+	print(list);
 
 	cout << "\n\n Loeschen 4" << endl;
 	list.loeschen(4);
@@ -146,16 +147,15 @@ int main() {
 	// Chaining zur Kollisionsvermeidung
 
 	cout << "\n\n Chaining zur Kollisionsvermeidung" << endl;
-	Chaining chain;
 
-	cout << "\n\n First entry - green, USB-Stick" << endl;
-	chain.hashTable("green", "USB-Stick");
-	
+	Chaining chain("green", "USB-Stick");
+	cout << "\n\n First entry - green, USB-Stick" << endl;	
+
 	cout << "\n\n Collision - green, LED" << endl;
-	chain.hashTable("green", "LED");
+	chain.nextElement("green", "LED");
 
 	cout << "\n\n New entry - blue, DVD-Carton" << endl;
-	chain.hashTable("blue", "DVD-Carton");
+	chain.nextElement("blue", "DVD-Carton");
 
 	chain.getHashTable();
 
@@ -169,11 +169,10 @@ int main() {
 	{
 		t.join();
 	}
-	
-	
+
 
 	// then everything can be saved...
-	
+
 	cout << "\n\n Dateioperationen" << endl;
 
 	FileOperation fo;
@@ -185,11 +184,9 @@ int main() {
 	// read from file
 	fo.lesen();
 
-	
 
-	
 
-	
+
 
 
 	char end;

@@ -4,6 +4,8 @@
 using namespace std;
 #include <string>
 
+namespace mySpace{
+
 class Mitarbeiter {
 
 private:
@@ -23,3 +25,4 @@ public:
 
 	string getName();
 };
+}

@@ -1,46 +1,43 @@
 #include "LinkedList.h"
+using namespace mySpace;
 
-	struct nod
+	struct node
 	{
 		int index;
 		string data;
-		nod *next;
+		node *next;
 	};
 
-	nod *root = NULL;
-	nod *neuesElement = NULL;
-	nod *ptr = NULL;
+	node *root;
+	node *neuesElement;
+	node *ptr;
 
-	LinkedList::LinkedList()
-	{	}
+
+	LinkedList::LinkedList(int index, string s)
+	{
+		neuesElement = new node();
+                neuesElement->index = index;
+                neuesElement->data = s;
+                neuesElement->next = NULL;
+
+                ptr = root = neuesElement;
+	}
 
 	void LinkedList::newElement(int index, string s)
 	{
-		if (neuesElement == NULL)
-		{
-			neuesElement = new nod();
-			neuesElement->index = index;
-			neuesElement->data = s;
-			neuesElement->next = NULL;
+		neuesElement = new node();
+		neuesElement->index = index;
+		neuesElement->data = s;
+		neuesElement->next = NULL;
 
-			ptr = root = neuesElement;
-		}
-		else
-		{
-			neuesElement = new nod();
-			neuesElement->index = index;
-			neuesElement->data = s;
-			neuesElement->next = NULL;
-
-			ptr->next = neuesElement;	// das letzte Element zeigt auf das neue Element
-			ptr = neuesElement;			// das neue Element wird zum Letzten
-		}
-
+		ptr->next = neuesElement;	// das letzte Element zeigt auf das neue Element
+		ptr = neuesElement;			// das neue Element wird zum Letzten
 	}
+
 
 	void LinkedList::loeschen(int in)
 	{
-		nod *zeiger = root;
+		node *zeiger = root;
 
 		if (zeiger->next != NULL)
 		{
