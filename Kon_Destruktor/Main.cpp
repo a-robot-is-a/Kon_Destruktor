@@ -54,6 +54,7 @@ int main() {
 	mitA[0].setName("Beate");	// populate the arry a bit
 	mitA[1].setName("Gisela");
 	mitA[2].setName("Peter");
+	mitA[3].setName("Manuela");
 
 	cout << "\n\n Nach dem populieren" << endl;
 
@@ -76,6 +77,8 @@ int main() {
 
 	que.print();
 
+	cout << "\n\n Overflow exception ausloesen" << endl;
+	que.add("Anna");
 
 
 	// Stack und einige Spielchen
@@ -102,21 +105,12 @@ int main() {
 	que.remove();	// Das erste Element aus der Schlange entfernen
 	que.print();
 
-	// und die Schlange auffuellen :)
-	cout << "\n\n Die Schlange auffuellen:" << endl;
-	que.add("Petra");
-	que.add("Heidi");
-	que.add("Olivia");
-	que.print();
 
-	cout << "\n\n Overflow exception ausloesen" << endl;
-	que.add("Anna");
+	cout << "\n\n Queue Underflow exception ausloesen" << endl;
 
-	cout << "\n\n Underflow exception ausloesen" << endl;
-	for (int i = 0; i < cap + 1; i++)
-	{
-		que.remove();
-	}
+	que.remove();
+	que.remove();
+	que.remove();
 
 
 	// Linked List

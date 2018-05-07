@@ -56,9 +56,9 @@ using namespace mySpace;
 			for (int i = 1; i < arraySize; i++)
 			{
 				queue[i - 1] = queue[i];
-				queue[i] = "nobody";
 			}
-			front--;			
+			front--;
+			queue[front] = "nobody";
 		}
 	}
 

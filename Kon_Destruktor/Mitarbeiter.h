@@ -15,7 +15,7 @@ private:
 
 public:
 
-	Mitarbeiter(string n = "unbekannt", int g = 0);
+	Mitarbeiter(string n = "NULL", int g = 0);
 
 	void setData(int g);
 
