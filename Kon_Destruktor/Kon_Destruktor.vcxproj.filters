@@ -30,10 +30,10 @@
     <ClCompile Include="Mitarbeiter.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Queues.cpp">
+    <ClCompile Include="Stack.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Stack.cpp">
+    <ClCompile Include="Queues.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,10 +50,10 @@
     <ClInclude Include="Mitarbeiter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Queues.h">
+    <ClInclude Include="Stack.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
+    <ClInclude Include="Queues.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

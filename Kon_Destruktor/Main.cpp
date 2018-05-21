@@ -68,18 +68,18 @@ int main() {
 
 	cout << "\n\n Hier beginnt der Queues.h" << endl;
 
-	Queues que(cap);
+	Queues que;
+	que.init();
 
 	for (Mitarbeiter i : mitA)	// Bereichsbaierte Vorschleife C++11
 	{
-		que.add(i.getName());	// Uebername der Namen von mitA[] in die Schlange
+		que.enter(i.getName());	// Uebername der Namen von mitA[] in die Schlange
 	}
 
-	que.print();
+	thread t1(&Queues::ausgabe, que); // get a clean call
+	if (t1.joinable()) { t1.join(); }
 
-	cout << "\n\n Overflow exception ausloesen" << endl;
-	que.add("Anna");
-
+	
 
 	// Stack und einige Spielchen
 
@@ -87,30 +87,26 @@ int main() {
 
 	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
 	Stack stack(cap);
-	stack.push(que.firstOne());	// get the first element of the queue on stack
+	stack.push(que.front());	// get the first element of the queue on stack
 	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
 	cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
 
 	cout << "\n\n In der Schlange siehts jetzt so aus:" << endl;
 	que.remove();	// and delete the first element from queue
-	que.print();
+	thread t2(&Queues::ausgabe, que); // get a clean call
+	if (t2.joinable()) { t2.join(); }
 
 	// again
 	cout << "\n\n Etwas spielen - einen Namen aus der Schlange auf den Stack :)" << endl;
-	stack.push(que.firstOne());	// Das erste Element aus der Schlange auf den Stack
+	stack.push(que.front());	// Das erste Element aus der Schlange auf den Stack
 	cout << "\n\t Der oberste Platz im Stack ist " << stack.size() << endl;
 	cout << "\n\t Das oberste Element im Stack ist " << stack.topElement() << endl;
 
 	cout << "\n\n In der Schlange siehts jetzt so aus:" << endl;
 	que.remove();	// Das erste Element aus der Schlange entfernen
-	que.print();
+	thread t3(&Queues::ausgabe, que); // get a clean call
+	if (t3.joinable()) { t3.join(); };
 
-
-	cout << "\n\n Queue Underflow exception ausloesen" << endl;
-
-	que.remove();
-	que.remove();
-	que.remove();
 
 
 	// Linked List

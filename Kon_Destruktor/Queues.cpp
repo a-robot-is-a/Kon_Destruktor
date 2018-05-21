@@ -1,69 +1,94 @@
-/*
-	gefunden auf: https://www.hackerearth.com/practice/data-structures
-*/
-
 #include "Queues.h"
-using namespace mySpace;
 
-	int arraySize;
-	//string element;
-	string *queue = nullptr;
+Queues::Queues()
+{}
 
-	int rear;
-	int front;
+void Queues::init()
+{
+	root = new node();
+	root->data = "root";
+	root->next = NULL;
 
-	
-	Queues::Queues(int aS):arraySize(aS),front(0),rear(0)
+	ptr = root;
+	cout << "\n\t\tNew Queue: " << root << endl;
+}
+
+void Queues::enter(string s)
+{
+	neuesElement = new node();
+	neuesElement->data = s;
+	neuesElement->next = NULL;
+
+	ptr->next = neuesElement;	
+	ptr = neuesElement;
+	cout << "\n\t\tNew Link: " << ptr->data << endl;
+}
+
+bool Queues::isempty()
+{
+	if (root->next == nullptr)
 	{
-		queue = new string[arraySize];
-		for (int i = 0; i < arraySize; i++)
-		{
-			queue[i] = "NULL";
-		}
+		cout << "\n\t\tQueue is empty" << endl;
+		empty = true;
+	}
+	else 
+	{ 
+		cout << "\n\t\tQueue is not empty" << endl;
+		empty = false;
+	}
+	return empty;
+}
+
+string Queues::front()
+{
+	if (root->next != NULL)
+	{
+		return root->next->data;
+	}
+}
+
+void Queues::remove()
+{
+	cout << "\n\t\tRemoving the first one..." << endl;
+
+	if (root->next != NULL)
+	{
+		node *tmp = root->next->next;
+		//delete root->next;
+		root->next = tmp;
 	}
 
-	void Queues::add(string e)
+	if (isempty() == true) // check if last node deleted
 	{
-		if (front == arraySize)	// if queue is full
-		{
-			cerr << "\n\tNo more space in the hallway :)" << endl;
-		}
-		else    // add the element on the first position
-		{			
-			queue[front] = e;
-			front++;
-		}
+		ptr = root;
 	}
+}
 
-	void Queues::print()
-	{
-		for (int i = 0; i < arraySize; i++)
-		{
-			cout << "\n\t" << queue[i] << endl;
-		}
-	}
+void Queues::ausgabe()
+{
+	cout << "\n\t\tIn der Schlange sind: " << endl;
 
-	void Queues::remove()
+	/*
+	for (; ptr != NULL; ptr = ptr->next)
 	{
-		if (queue[rear] == "nobody")
-		{
-			cerr << "\n\tNobody in the hallway :)" << endl; // Underflow-exception
-		}
-		else
-		{
-			// remove the first element and move up
-			
-			for (int i = 1; i < arraySize; i++)
-			{
-				queue[i - 1] = queue[i];
-			}
-			front--;
-			queue[front] = "nobody";
-		}
+		cout << "\n\t\t" << ptr << " " << ptr->data
+			<< " => " << ptr->next << endl;
 	}
+	*/
 
-	string Queues::firstOne()
+	if (root->next == NULL)
 	{
-		return queue[0];
+		cout << "\n\t\tKeine Daten" << endl;
 	}
+	else
+	{
+		while (root != NULL)
+		{
+			cout << "\n\t\t" << root << " " << root->data
+				<< " => " << root->next << endl;
+
+			root = root->next;
+		}
+	}
+}
 

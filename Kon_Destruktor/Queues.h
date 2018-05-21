@@ -4,28 +4,28 @@
 using namespace std;
 #include <string>
 
-namespace mySpace{
-
 class Queues {
 
 private:
 
-	int arraySize;
-	string *queue;
-	int rear;
-	int front;
+	struct node	// Muster fuer den Compiler zum speichern dieses Typs
+	{
+		string data;
+		node *next;
+	};
+
+	node *root;
+	node *neuesElement;
+	node *ptr;
+	bool empty;
 
 public:
 
-	Queues(int aS);
-
-	void add(string e);	
-
-	void print();	
-
-	void remove();	
-
-	string firstOne();
-	
+	Queues();
+	void init(); // erzeugen einer leeren Schlange
+	void enter(string s); // hinzufuegen am Ende
+	bool isempty(); // pruefen, ob die Schlange leer ist 
+	string front(); // inspizieren Schlangenkopf
+	void remove(); // entfernen des Schlangenkopfes
+	void ausgabe();
 };
-}
