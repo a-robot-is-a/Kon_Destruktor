@@ -5,10 +5,7 @@
 #include "Stack.h"
 using namespace mySpace;
 
-
-	int cap;
 	int top;
-	string *stack = nullptr;	// Einen Zeiger fuer das Array definieren
 
 	Stack::Stack(int ca):cap(ca)
 	{

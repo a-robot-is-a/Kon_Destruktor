@@ -1,17 +1,6 @@
 #include "LinkedList.h"
 using namespace mySpace;
 
-	struct node
-	{
-		int index;
-		string data;
-		node *next;
-	};
-
-	node *root;
-	node *neuesElement;
-	node *ptr;
-
 
 	LinkedList::LinkedList(int index, string s)
 	{

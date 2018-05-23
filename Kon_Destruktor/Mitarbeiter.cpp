@@ -1,9 +1,6 @@
 #include "Mitarbeiter.h"
 using namespace mySpace;
 
-string name;
-int gehalt;
-
 Mitarbeiter::Mitarbeiter(string n, int g):name(n), gehalt(g)
 {	}
 

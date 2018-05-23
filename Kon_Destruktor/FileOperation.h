@@ -13,7 +13,6 @@ class FileOperation
 
 private:
 
-
 	fstream stream;
 	vector<string> myVec;
 

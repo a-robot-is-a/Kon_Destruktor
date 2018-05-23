@@ -1,21 +1,6 @@
 #include "Chaining.h"
 using namespace Space;
 
-	struct no
-	{
-		string data;
-		no *next;
-	};
-
-	no *ro = NULL;
-	no *nEle = NULL;
-	no *pt = NULL;
-
-	pair<int, no*> x;
-	map<int, no*> m;
-
-	string colorIndex, obj;
-	int index;
 
 	Chaining::Chaining(string color, string object):colorIndex(color),obj(object)
 	{
