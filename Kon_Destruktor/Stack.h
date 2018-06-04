@@ -17,6 +17,7 @@ private:
 public:
 
 	Stack(int cap);
+	~Stack();
 
 	void push(string x);	
 

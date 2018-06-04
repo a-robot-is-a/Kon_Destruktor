@@ -107,6 +107,8 @@ int main() {
 	thread t3(&Queues::ausgabe, que); // get a clean call
 	if (t3.joinable()) { t3.join(); };
 
+	// Clean the memory
+	stack.~Stack();
 
 
 	// Linked List

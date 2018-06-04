@@ -14,6 +14,13 @@ using namespace mySpace;
 		stack[top] = {};	// Initialisierung um Nebeneffekte zu vermeiden
 	}
 
+	Stack::~Stack()
+	{
+		// clean up the memory
+		delete[] stack;
+		cout << "\n Stack wurde entsorgt." << endl;
+	}
+
 	void Stack::push(string x)
 	{
 		if (top == cap)     //If the top position is the last of position of the stack, this means that the stack is full.
